@@ -138,7 +138,7 @@ export default function AboutContent() {
               <div className="absolute left-0 top-2 h-4 w-4 -translate-x-[7px] rounded-full bg-primary ring-4 ring-background" />
               <Card className="rounded-xl border border-border bg-card p-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl font-bold text-primary">2016</span>
+                  {/* <span className="text-2xl font-bold text-primary">2016</span> */}
                   <h3 className="text-xl font-semibold text-card-foreground">Foundation</h3>
                 </div>
                 <p className="mt-2 text-muted-foreground">
@@ -151,7 +151,7 @@ export default function AboutContent() {
               <div className="absolute left-0 top-2 h-4 w-4 -translate-x-[7px] rounded-full bg-accent ring-4 ring-background" />
               <Card className="rounded-xl border border-border bg-card p-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl font-bold text-accent">2018</span>
+                  {/* <span className="text-2xl font-bold text-accent">2018</span> */}
                   <h3 className="text-xl font-semibold text-card-foreground">Expansion</h3>
                 </div>
                 <p className="mt-2 text-muted-foreground">
@@ -164,7 +164,7 @@ export default function AboutContent() {
               <div className="absolute left-0 top-2 h-4 w-4 -translate-x-[7px] rounded-full bg-secondary ring-4 ring-background" />
               <Card className="rounded-xl border border-border bg-card p-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl font-bold text-secondary">2021</span>
+                  {/* <span className="text-2xl font-bold text-secondary">2021</span> */}
                   <h3 className="text-xl font-semibold text-card-foreground">Innovation Hub</h3>
                 </div>
                 <p className="mt-2 text-muted-foreground">
@@ -177,7 +177,7 @@ export default function AboutContent() {
               <div className="absolute left-0 top-2 h-4 w-4 -translate-x-[7px] rounded-full bg-primary ring-4 ring-background" />
               <Card className="rounded-xl border border-border bg-card p-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl font-bold text-primary">2024</span>
+                  {/* <span className="text-2xl font-bold text-primary">2024</span> */}
                   <h3 className="text-xl font-semibold text-card-foreground">Enterprise Leader</h3>
                 </div>
                 <p className="mt-2 text-muted-foreground">
