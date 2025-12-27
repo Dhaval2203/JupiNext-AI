@@ -107,6 +107,13 @@ export default function CareersPage() {
 
 	return (
 		<div className="min-h-screen">
+			<head>
+				<title>Careers at JupiNext | Join Our Team</title>
+				<meta name="description" content="Explore exciting career opportunities at JupiNext. Join our team of innovators and contribute to building modern web, cloud, and blockchain solutions." />
+				<meta name="keywords" content="JupiNext careers, job openings, software developer jobs, UI/UX designer jobs, DevOps engineer, project manager, technology jobs, remote jobs" />
+				<meta property="og:title" content="Careers at JupiNext - Join Our Team" />
+				<meta property="og:description" content="Discover open positions at JupiNext and build your career with a company that values innovation, growth, and collaboration." />
+			</head>
 			<Header />
 
 			{/* Hero Section */}

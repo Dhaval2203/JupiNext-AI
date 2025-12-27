@@ -35,6 +35,14 @@ export default function ContactPage() {
 
 	return (
 		<div className="min-h-screen">
+			<head>
+				<title>Contact JupiNext | Get in Touch with Our Team</title>
+				<meta name="description" content="Have questions or want to collaborate? Contact JupiNext for inquiries about our software solutions, services, or partnership opportunities." />
+				<meta name="keywords" content="JupiNext contact, get in touch, software inquiries, partnership, support, customer service" />
+				<meta property="og:title" content="Contact JupiNext - Get in Touch" />
+				<meta property="og:description" content="Reach out to JupiNext for support, collaboration, or inquiries about our technology solutions and services." />
+			</head>
+
 			<Header />
 
 			{/* Hero Section */}
