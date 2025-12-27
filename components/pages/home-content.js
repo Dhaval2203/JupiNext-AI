@@ -1,20 +1,22 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import Link from "next/link"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 import {
-  Code2,
-  Smartphone,
+  ArrowRight,
+  Award,
+  CheckCircle,
+  Clock,
   Cloud,
+  Code2,
   Palette,
   Shield,
-  Zap,
-  CheckCircle,
-  ArrowRight,
+  Smartphone,
   Users,
-  Award,
-  Clock,
+  Zap,
 } from "lucide-react"
-import { primaryColor, secondaryColor } from "@/lib/colors"
+import Link from "next/link"
+import { useCounter } from "../../lib/useCounter"
 
 export default function HomeContent() {
   return (
@@ -180,29 +182,70 @@ export default function HomeContent() {
       <section className="px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <Card className="rounded-xl border border-border bg-card p-8 text-center">
-              <div className="mb-4 inline-flex rounded-full bg-primary/10 p-4">
-                <Award className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-4xl font-bold text-foreground">150+</div>
-              <div className="mt-2 text-sm text-muted-foreground">Projects Delivered</div>
-            </Card>
 
-            <Card className="rounded-xl border border-border bg-card p-8 text-center">
-              <div className="mb-4 inline-flex rounded-full bg-primary/10 p-4">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-4xl font-bold text-foreground">95%</div>
-              <div className="mt-2 text-sm text-muted-foreground">Happy Clients</div>
-            </Card>
+            {/* Projects Delivered */}
+            {(() => {
+              const { count, ref } = useCounter(150)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card p-8 text-center"
+                >
+                  <div className="mb-4 inline-flex rounded-full bg-primary/10 p-4">
+                    <Award className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-foreground">
+                    {count}+
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Successful Projects
+                  </div>
+                </Card>
+              )
+            })()}
 
-            <Card className="rounded-xl border border-border bg-card p-8 text-center">
-              <div className="mb-4 inline-flex rounded-full bg-primary/10 p-4">
-                <Clock className="h-8 w-8 text-primary" />
-              </div>
-              <div className="text-4xl font-bold text-foreground">8+</div>
-              <div className="mt-2 text-sm text-muted-foreground">Years of Experience</div>
-            </Card>
+            {/* Client Satisfaction */}
+            {(() => {
+              const { count, ref } = useCounter(95)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card p-8 text-center"
+                >
+                  <div className="mb-4 inline-flex rounded-full bg-primary/10 p-4">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-foreground">
+                    {count}%
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Client Satisfaction Rate
+                  </div>
+                </Card>
+              )
+            })()}
+
+            {/* Lines of Code */}
+            {(() => {
+              const { count, ref } = useCounter(12135)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card p-8 text-center"
+                >
+                  <div className="mb-4 inline-flex rounded-full bg-primary/10 p-4">
+                    <Clock className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-foreground">
+                    {count.toLocaleString()}+
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Lines of Code Written
+                  </div>
+                </Card>
+              )
+            })()}
+
           </div>
         </div>
       </section>

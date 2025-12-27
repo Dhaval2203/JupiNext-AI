@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Header from "@/components/header"
 import { Card } from "@/components/ui/card"
-import { Star } from "lucide-react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
+import { Star } from "lucide-react"
+import { useState } from "react"
+import { useCounter } from '../../lib/useCounter.js'
 
 export default function ReviewsPage() {
   const [flippedCards, setFlippedCards] = useState({})
@@ -152,9 +153,8 @@ export default function ReviewsPage() {
               >
                 {/* Front of Card - Name and Designation */}
                 <Card
-                  className={`absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-8 backface-hidden ${
-                    flippedCards[index] ? "pointer-events-none" : ""
-                  }`}
+                  className={`absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-8 backface-hidden ${flippedCards[index] ? "pointer-events-none" : ""
+                    }`}
                 >
                   <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
                     <span className="text-3xl font-bold text-primary">{review.initials}</span>
@@ -171,9 +171,8 @@ export default function ReviewsPage() {
 
                 {/* Back of Card - Review Text */}
                 <Card
-                  className={`absolute inset-0 flex flex-col justify-between rounded-xl border border-border bg-card p-8 backface-hidden rotate-y-180 ${
-                    !flippedCards[index] ? "pointer-events-none" : ""
-                  }`}
+                  className={`absolute inset-0 flex flex-col justify-between rounded-xl border border-border bg-card p-8 backface-hidden rotate-y-180 ${!flippedCards[index] ? "pointer-events-none" : ""
+                    }`}
                 >
                   <div>
                     <div className="mb-3 flex items-center gap-1">
@@ -203,34 +202,91 @@ export default function ReviewsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-muted/30 px-6 py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-muted/30 px-6 py-24 lg:px-8">
+        <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Trusted <span style={{ color: primaryColor }}>by Clients</span>{" "}
               <span style={{ color: secondaryColor }}>Worldwide</span>
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">Our commitment to excellence shows in the numbers</p>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Our commitment to excellence shows in the numbers
+            </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <Card className="rounded-xl border border-border bg-card p-8 text-center">
-              <div className="text-4xl font-bold text-foreground">98%</div>
-              <div className="mt-2 text-sm text-muted-foreground">Client Satisfaction Rate</div>
-            </Card>
+          {/* UPDATED GRID */}
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Card 1 */}
+            {(() => {
+              const { count, ref } = useCounter(95)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
+                >
+                  <div className="text-4xl font-bold text-foreground">{count}%</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Client Satisfaction Rate
+                  </div>
+                </Card>
+              )
+            })()}
 
-            <Card className="rounded-xl border border-border bg-card p-8 text-center">
-              <div className="text-4xl font-bold text-foreground">150+</div>
-              <div className="mt-2 text-sm text-muted-foreground">Successful Projects</div>
-            </Card>
+            {/* Card 2 */}
+            {(() => {
+              const { count, ref } = useCounter(150)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
+                >
+                  <div className="text-4xl font-bold text-foreground">{count}+</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Successful Projects
+                  </div>
+                </Card>
+              )
+            })()}
 
-            <Card className="rounded-xl border border-border bg-card p-8 text-center">
-              <div className="text-4xl font-bold text-foreground">4.9/5</div>
-              <div className="mt-2 text-sm text-muted-foreground">Average Rating</div>
-            </Card>
+            {/* Card 3 */}
+            {(() => {
+              const { count, ref } = useCounter(49)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
+                >
+                  <div className="text-4xl font-bold text-foreground">
+                    {(count / 10).toFixed(1)}/5
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Average Rating
+                  </div>
+                </Card>
+              )
+            })()}
+
+            {/* ✅ NEW CARD — LINES OF CODE */}
+            {(() => {
+              const { count, ref } = useCounter(12135)
+              return (
+                <Card
+                  ref={ref}
+                  className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
+                >
+                  <div className="text-4xl font-bold text-foreground">
+                    {count.toLocaleString()}+
+                  </div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Lines of Code Written
+                  </div>
+                </Card>
+              )
+            })()}
           </div>
         </div>
       </section>
+
 
       <Footer />
     </div>
