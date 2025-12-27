@@ -70,16 +70,22 @@ export default function Header() {
             Tech Stack
           </Link>
           <Link
-            href="/contact"
+            href="/reviews"
             className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
           >
-            Contact
+            Reviews
           </Link>
           <Link
             href="/careers"
             className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
           >
             Careers
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
+          >
+            Contact
           </Link>
         </div>
 
@@ -137,11 +143,11 @@ export default function Header() {
               Tech Stack
             </Link>
             <Link
-              href="/contact"
+              href="/reviews"
               className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              Reviews
             </Link>
             <Link
               href="/careers"
@@ -149,6 +155,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Careers
+            </Link>
+            <Link
+              href="/contact"
+              className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
             </Link>
             <div className="pt-2">
               <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">

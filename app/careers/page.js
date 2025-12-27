@@ -2,7 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { MapPin, Clock, Briefcase, DollarSign, ArrowRight } from "lucide-react"
+import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function CareersPage() {
@@ -13,7 +13,6 @@ export default function CareersPage() {
       location: "Remote / Hybrid",
       type: "Full-time",
       experience: "5+ years",
-      salary: "$80k - $120k",
       description:
         "We're looking for an experienced full stack developer to join our engineering team and build scalable web applications using modern technologies.",
       requirements: [
@@ -30,7 +29,6 @@ export default function CareersPage() {
       location: "Remote",
       type: "Full-time",
       experience: "3+ years",
-      salary: "$70k - $100k",
       description:
         "Join our mobile team to create beautiful, high-performance mobile applications for iOS and Android platforms.",
       requirements: [
@@ -47,7 +45,6 @@ export default function CareersPage() {
       location: "Remote / Hybrid",
       type: "Full-time",
       experience: "4+ years",
-      salary: "$75k - $110k",
       description:
         "We need a skilled DevOps engineer to help us build and maintain our cloud infrastructure and CI/CD pipelines.",
       requirements: [
@@ -64,7 +61,6 @@ export default function CareersPage() {
       location: "Remote",
       type: "Full-time",
       experience: "3+ years",
-      salary: "$60k - $90k",
       description:
         "Create stunning user interfaces and delightful user experiences for our web and mobile applications.",
       requirements: [
@@ -81,7 +77,6 @@ export default function CareersPage() {
       location: "Remote / Hybrid",
       type: "Full-time",
       experience: "4+ years",
-      salary: "$90k - $130k",
       description:
         "Join our AI team to develop cutting-edge machine learning solutions and integrate AI capabilities into our products.",
       requirements: [
@@ -98,7 +93,6 @@ export default function CareersPage() {
       location: "Remote / Hybrid",
       type: "Full-time",
       experience: "5+ years",
-      salary: "$70k - $100k",
       description:
         "Lead and coordinate software development projects, ensuring timely delivery and client satisfaction.",
       requirements: [
@@ -148,9 +142,7 @@ export default function CareersPage() {
             </Card>
 
             <Card className="rounded-xl border border-border bg-card p-6 text-center">
-              <div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4">
-                <DollarSign className="h-6 w-6 text-primary" />
-              </div>
+              <div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4"></div>
               <h3 className="text-lg font-semibold text-foreground">Competitive Salary</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Industry-leading compensation with performance bonuses
@@ -230,10 +222,6 @@ export default function CareersPage() {
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         {job.type}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="h-4 w-4" />
-                        {job.salary}
                       </div>
                     </div>
                     <p className="mt-4 text-muted-foreground">{job.description}</p>
