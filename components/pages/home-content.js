@@ -227,7 +227,7 @@ export default function HomeContent() {
 
             {/* Lines of Code */}
             {(() => {
-              const { count, ref } = useCounter(12135)
+              const { count, ref } = useCounter(12530)
               return (
                 <Card
                   ref={ref}
@@ -294,23 +294,6 @@ export default function HomeContent() {
             >
               <Link href="/process">View Our Process</Link>
             </Button>
-          </div>
-
-          <div className="mt-12 flex items-center justify-center gap-8 text-white/80">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">150+</div>
-              <div className="text-sm">Projects</div>
-            </div>
-            <div className="h-12 w-px bg-white/20" />
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">95%</div>
-              <div className="text-sm">Happy Clients</div>
-            </div>
-            <div className="h-12 w-px bg-white/20" />
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">8+</div>
-              <div className="text-sm">Years</div>
-            </div>
           </div>
         </div>
       </section>
