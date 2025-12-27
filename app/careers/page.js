@@ -3,7 +3,6 @@ import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
-import Link from "next/link"
 
 export default function CareersPage() {
   const jobOpenings = [
@@ -202,12 +201,18 @@ export default function CareersPage() {
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Open Positions</h2>
             <p className="mt-4 text-lg text-muted-foreground">Find your next opportunity with us</p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-6 py-3 text-sm">
+              <span className="font-semibold text-foreground">Apply at:</span>
+              <a href="mailto:hr@jupinext.com" className="text-primary hover:underline font-medium">
+                hr@jupinext.com
+              </a>
+            </div>
           </div>
 
           <div className="mt-16 space-y-6">
             {jobOpenings.map((job, index) => (
               <Card key={index} className="rounded-xl border border-border bg-card p-8 transition-all hover:shadow-lg">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                <div className="flex flex-col gap-6">
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-foreground">{job.title}</h3>
                     <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
@@ -223,6 +228,16 @@ export default function CareersPage() {
                         <Clock className="h-4 w-4" />
                         {job.type}
                       </div>
+                      <div className="flex items-center gap-2">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                        {job.experience}
+                      </div>
                     </div>
                     <p className="mt-4 text-muted-foreground">{job.description}</p>
                     <div className="mt-4">
@@ -236,14 +251,6 @@ export default function CareersPage() {
                         ))}
                       </ul>
                     </div>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                      <Link href="/contact">
-                        Apply Now
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
                   </div>
                 </div>
               </Card>
@@ -262,10 +269,10 @@ export default function CareersPage() {
           </p>
           <div className="mt-8">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href="/contact">
+              <a href="mailto:hr@jupinext.com">
                 Send Your Resume
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </div>
         </Card>

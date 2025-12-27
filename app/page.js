@@ -250,26 +250,68 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary px-6 py-24 lg:px-8">
-        <Card className="mx-auto max-w-4xl rounded-xl border-0 bg-primary p-12 text-center shadow-2xl">
-          <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl">Ready to Start Your Next Project?</h2>
-          <p className="mt-4 text-lg text-primary-foreground/90">
-            Let's build something amazing together. Contact us today to discuss your vision.
+      <section className="relative overflow-hidden px-6 py-24 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent" />
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10" />
+
+        <div className="relative mx-auto max-w-4xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm mb-6">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+            </span>
+            We're Available for New Projects
+          </div>
+
+          <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Ready to Start Your
+            <br />
+            <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">Next Project?</span>
+          </h2>
+
+          <p className="mt-6 text-lg text-white/90 sm:text-xl max-w-2xl mx-auto">
+            Let's transform your vision into reality. Partner with us to build innovative, scalable solutions that drive
+            your business forward.
           </p>
-          <div className="mt-8">
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               asChild
               size="lg"
-              variant="secondary"
-              className="bg-background text-foreground hover:bg-background/90"
+              className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-full sm:w-auto"
             >
-              <Link href="/contact">
-                Get in Touch
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/contact" className="flex items-center gap-2">
+                Start Your Project
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all w-full sm:w-auto bg-transparent"
+            >
+              <Link href="/process">View Our Process</Link>
+            </Button>
           </div>
-        </Card>
+
+          <div className="mt-12 flex items-center justify-center gap-8 text-white/80">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">150+</div>
+              <div className="text-sm">Projects</div>
+            </div>
+            <div className="h-12 w-px bg-white/20" />
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">95%</div>
+              <div className="text-sm">Happy Clients</div>
+            </div>
+            <div className="h-12 w-px bg-white/20" />
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">8+</div>
+              <div className="text-sm">Years</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Footer />
