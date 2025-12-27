@@ -2,7 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
+import { MapPin, Clock, Briefcase, ArrowRight, Mail } from "lucide-react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function CareersPage() {
@@ -10,7 +10,7 @@ export default function CareersPage() {
     {
       title: "Senior Full Stack Developer",
       department: "Engineering",
-      location: "Remote / Hybrid",
+      location: "Remote",
       type: "Full-time",
       experience: "5+ years",
       description:
@@ -42,7 +42,7 @@ export default function CareersPage() {
     {
       title: "DevOps Engineer",
       department: "Infrastructure",
-      location: "Remote / Hybrid",
+      location: "Remote",
       type: "Full-time",
       experience: "4+ years",
       description:
@@ -74,7 +74,7 @@ export default function CareersPage() {
     {
       title: "AI/ML Engineer",
       department: "Engineering",
-      location: "Remote / Hybrid",
+      location: "Remote",
       type: "Full-time",
       experience: "4+ years",
       description:
@@ -90,7 +90,7 @@ export default function CareersPage() {
     {
       title: "Project Manager",
       department: "Management",
-      location: "Remote / Hybrid",
+      location: "Remote",
       type: "Full-time",
       experience: "5+ years",
       description:
@@ -209,12 +209,6 @@ export default function CareersPage() {
               <span style={{ color: primaryColor }}>Open</span> <span style={{ color: secondaryColor }}>Positions</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">Find your next opportunity with us</p>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-6 py-3 text-sm">
-              <span className="font-semibold text-foreground">Apply at:</span>
-              <a href="mailto:hr@jupinext.com" className="text-primary hover:underline font-medium">
-                hr@jupinext.com
-              </a>
-            </div>
           </div>
 
           <div className="mt-16 space-y-6">
@@ -258,6 +252,13 @@ export default function CareersPage() {
                           </li>
                         ))}
                       </ul>
+                    </div>
+                    <div className="mt-6 flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-3 text-sm border border-primary/20">
+                      <Mail className="h-4 w-4 text-primary" />
+                      <span className="font-semibold text-foreground">Apply at:</span>
+                      <a href="mailto:hr@jupinext.com" className="text-primary hover:underline font-medium">
+                        hr@jupinext.com
+                      </a>
                     </div>
                   </div>
                 </div>
