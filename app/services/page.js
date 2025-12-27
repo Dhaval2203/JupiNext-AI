@@ -6,6 +6,19 @@ import Link from "next/link"
 import { Code2, Smartphone, Cloud, Palette, Shield, Zap, Settings, ArrowRight, CheckCircle } from "lucide-react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
 
+export const metadata = {
+  title: "Our Services | Web, Mobile, Cloud, AI & Blockchain Solutions - JupiNext",
+  description:
+    "Comprehensive technology services including web development, mobile apps, cloud solutions, UI/UX design, blockchain, AI automation, and enterprise software development.",
+  keywords:
+    "web development, mobile apps, cloud solutions, UI/UX design, blockchain development, AI automation, enterprise software, IT services",
+  openGraph: {
+    title: "JupiNext Services - Complete IT Solutions",
+    description: "Transform your business with our comprehensive technology services",
+    type: "website",
+  },
+}
+
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">

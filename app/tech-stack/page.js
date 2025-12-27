@@ -3,6 +3,19 @@ import Footer from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { primaryColor, secondaryColor } from "@/lib/colors"
 
+export const metadata = {
+  title: "Technology Stack | Modern Web, Cloud & Blockchain Technologies - JupiNext",
+  description:
+    "Explore our technology stack: React, Next.js, Node.js, Python, AWS, Azure, PostgreSQL, MongoDB, Docker, Kubernetes, Ethereum, and more cutting-edge technologies.",
+  keywords:
+    "technology stack, React, Next.js, Node.js, AWS, Azure, blockchain, Ethereum, Docker, Kubernetes, web technologies",
+  openGraph: {
+    title: "JupiNext Technology Stack - Industry-Leading Tools",
+    description: "Building with the best technologies for robust solutions",
+    type: "website",
+  },
+}
+
 export default function TechStackPage() {
   return (
     <div className="min-h-screen">

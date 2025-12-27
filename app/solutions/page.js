@@ -6,6 +6,19 @@ import Link from "next/link"
 import { DollarSign, HeartPulse, ShoppingCart, Layers, GraduationCap, Building2, ArrowRight } from "lucide-react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
 
+export const metadata = {
+  title: "Industry Solutions | FinTech, HealthTech, E-Commerce & More - JupiNext",
+  description:
+    "Specialized technology solutions for FinTech, HealthTech, E-Commerce, SaaS, EdTech, and Enterprise. Custom software tailored to your industry's unique needs.",
+  keywords:
+    "fintech solutions, healthtech software, e-commerce platforms, SaaS development, edtech solutions, enterprise software",
+  openGraph: {
+    title: "Industry-Specific IT Solutions by JupiNext",
+    description: "Tailored technology solutions for your industry",
+    type: "website",
+  },
+}
+
 export default function SolutionsPage() {
   return (
     <div className="min-h-screen">
