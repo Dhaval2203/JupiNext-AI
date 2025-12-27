@@ -227,7 +227,7 @@ export default function HomeContent() {
 
             {/* Lines of Code */}
             {(() => {
-              const { count, ref } = useCounter(12530)
+              const { count, ref } = useCounter(12135)
               return (
                 <Card
                   ref={ref}

@@ -1,306 +1,195 @@
-import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Header from "@/components/header"
 import { Card } from "@/components/ui/card"
 import { primaryColor, secondaryColor } from "@/lib/colors"
 
+// React Icons
+import { FaAws, FaJava, FaVuejs } from "react-icons/fa"
+import { LuHardHat } from "react-icons/lu"
+import {
+	SiAmazondynamodb,
+	SiAmazons3,
+	SiAngular,
+	SiAnsible,
+	SiDocker,
+	SiDotnet,
+	SiEthereum,
+	SiExpress,
+	SiGit,
+	SiGithubactions,
+	SiGitlab,
+	SiGo,
+	SiGooglecloud,
+	SiIpfs,
+	SiJenkins,
+	SiKubernetes,
+	SiMongodb,
+	SiMysql,
+	SiNextdotjs,
+	SiPostgresql,
+	SiPython,
+	SiReact,
+	SiRedis,
+	SiRust,
+	SiSolana,
+	SiSolidity,
+	SiTailwindcss,
+	SiTerraform,
+	SiVercel,
+	SiWeb3Dotjs
+} from "react-icons/si"
+import { TbBrandTypescript } from "react-icons/tb"
+import { VscAzure, VscAzureDevops } from "react-icons/vsc"
+
 export const metadata = {
-  title: "Technology Stack | Modern Web, Cloud & Blockchain Technologies - JupiNext",
-  description:
-    "Explore our technology stack: React, Next.js, Node.js, Python, AWS, Azure, PostgreSQL, MongoDB, Docker, Kubernetes, Ethereum, and more cutting-edge technologies.",
-  keywords:
-    "technology stack, React, Next.js, Node.js, AWS, Azure, blockchain, Ethereum, Docker, Kubernetes, web technologies",
-  openGraph: {
-    title: "JupiNext Technology Stack - Industry-Leading Tools",
-    description: "Building with the best technologies for robust solutions",
-    type: "website",
-  },
+	title: "Technology Stack | Modern Web, Cloud & Blockchain Technologies - JupiNext",
+	description:
+		"Explore our technology stack: React, Next.js, Node.js, Python, AWS, Azure, PostgreSQL, MongoDB, Docker, Kubernetes, Ethereum, and more cutting-edge technologies.",
+	keywords:
+		"technology stack, React, Next.js, Node.js, AWS, Azure, blockchain, Ethereum, Docker, Kubernetes, web technologies",
+	openGraph: {
+		title: "JupiNext Technology Stack - Industry-Leading Tools",
+		description: "Building with the best technologies for robust solutions",
+		type: "website",
+	},
 }
 
+const techSections = [
+	{
+		title: "Frontend",
+		subtitle: "Modern UI frameworks and libraries",
+		color: primaryColor,
+		bg: "px-6 py-16 lg:px-8",
+		items: [
+			{ label: "React", icon: SiReact, color: "text-primary" },
+			{ label: "Next.js", icon: SiNextdotjs, color: "text-foreground" },
+			{ label: "Vue.js", icon: FaVuejs, color: "text-accent" },
+			{ label: "TypeScript", icon: TbBrandTypescript, color: "text-primary" },
+			{ label: "Tailwind CSS", icon: SiTailwindcss, color: "text-accent" },
+			{ label: "Angular", icon: SiAngular, color: "text-secondary" },
+		],
+	},
+	{
+		title: "Backend",
+		subtitle: "Powerful server-side technologies",
+		color: primaryColor,
+		bg: "bg-muted/30 px-6 py-16 lg:px-8",
+		items: [
+			{ label: ".NET", icon: SiDotnet, color: "text-primary" },
+			{ label: "Node.js", icon: VscAzure, color: "text-primary" },
+			{ label: "Express.js", icon: SiExpress, color: "text-foreground" },
+			{ label: "Java", icon: FaJava, color: "text-secondary" },
+			{ label: "Python", icon: SiPython, color: "text-accent" },
+			{ label: "Rust", icon: SiRust, color: "text-primary" },
+			{ label: "Golang", icon: SiGo, color: "text-accent" },
+		],
+	},
+	{
+		title: "Cloud Infrastructure",
+		subtitle: "Scalable cloud services and deployment",
+		color: primaryColor,
+		bg: "px-6 py-16 lg:px-8",
+		items: [
+			{ label: "AWS", icon: FaAws, color: "text-secondary" },
+			{ label: "Azure", icon: VscAzureDevops, color: "text-accent" },
+			{ label: "Google Cloud", icon: SiGooglecloud, color: "text-primary" },
+			{ label: "Vercel", icon: SiVercel, color: "text-foreground" },
+			{ label: "Docker", icon: SiDocker, color: "text-accent" },
+			{ label: "Kubernetes", icon: SiKubernetes, color: "text-primary" },
+		],
+	},
+	{
+		title: "Database Storage",
+		subtitle: "Reliable data management solutions",
+		color: primaryColor,
+		bg: "bg-muted/30 px-6 py-16 lg:px-8",
+		items: [
+			{ label: "PostgreSQL", icon: SiPostgresql, color: "text-accent" },
+			{ label: "MongoDB", icon: SiMongodb, color: "text-primary" },
+			{ label: "Redis", icon: SiRedis, color: "text-secondary" },
+			{ label: "MySQL", icon: SiMysql, color: "text-accent" },
+			{ label: "DynamoDB", icon: SiAmazondynamodb, color: "text-primary" },
+			{ label: "Amazon S3", icon: SiAmazons3, color: "text-foreground" },
+		],
+	},
+	{
+		title: "DevOps CI/CD",
+		subtitle: "Automation and continuous delivery",
+		color: primaryColor,
+		bg: "px-6 py-16 lg:px-8",
+		items: [
+			{ label: "Git", icon: SiGit, color: "text-secondary" },
+			{ label: "GitHub Actions", icon: SiGithubactions, color: "text-foreground" },
+			{ label: "GitLab CI", icon: SiGitlab, color: "text-primary" },
+			{ label: "Jenkins", icon: SiJenkins, color: "text-accent" },
+			{ label: "Terraform", icon: SiTerraform, color: "text-primary" },
+			{ label: "Ansible", icon: SiAnsible, color: "text-secondary" },
+		],
+	},
+	{
+		title: "Blockchain Web3",
+		subtitle: "Decentralized technologies",
+		color: primaryColor,
+		bg: "bg-muted/30 px-6 py-16 lg:px-8",
+		items: [
+			{ label: "Ethereum", icon: SiEthereum, color: "text-accent" },
+			{ label: "Solana", icon: SiSolana, color: "text-primary" },
+			{ label: "Web3.js", icon: SiWeb3Dotjs, color: "text-secondary" },
+			{ label: "Solidity", icon: SiSolidity, color: "text-accent" },
+			{ label: "Hardhat", icon: LuHardHat, color: "text-primary" },
+			{ label: "IPFS", icon: SiIpfs, color: "text-foreground" },
+		],
+	},
+]
+
 export default function TechStackPage() {
-  return (
-    <div className="min-h-screen">
-      <Header />
+	return (
+		<div className="min-h-screen">
+			<Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
-            <span style={{ color: primaryColor }}>Technology</span> <span style={{ color: secondaryColor }}>Stack</span>
-          </h1>
-          <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
-            We leverage industry-leading technologies to build robust, scalable, and future-proof solutions.
-          </p>
-        </div>
-      </section>
+			{/* Hero Section */}
+			<section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
+				<div className="mx-auto max-w-4xl text-center">
+					<h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+						<span style={{ color: primaryColor }}>Technology</span>{" "}
+						<span style={{ color: secondaryColor }}>Stack</span>
+					</h1>
+					<p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
+						We leverage industry-leading technologies to build robust, scalable, and future-proof solutions.
+					</p>
+				</div>
+			</section>
 
-      {/* Frontend Technologies */}
-      <section className="px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
-              Frontend
-            </h2>
-            <p className="mt-2 text-muted-foreground">Modern UI frameworks and libraries</p>
-          </div>
+			{/* Tech Sections */}
+			{techSections.map((section, idx) => (
+				<section key={idx} className={section.bg}>
+					<div className="mx-auto max-w-7xl">
+						<div className="mb-12">
+							<h2 className="text-3xl font-bold" style={{ color: section.color }}>
+								{section.title}
+							</h2>
+							<p className="mt-2 text-muted-foreground">{section.subtitle}</p>
+						</div>
 
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">⚛️</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">React</p>
-            </Card>
+						<div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+							{section.items.map((tech, i) => {
+								const Icon = tech.icon
+								return (
+									<Card
+										key={i}
+										className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1"
+									>
+										<Icon className={`text-4xl ${tech.color}`} />
+										<p className="mt-3 text-center text-sm font-medium text-foreground">{tech.label}</p>
+									</Card>
+								)
+							})}
+						</div>
+					</div>
+				</section>
+			))}
 
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-foreground">▲</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Next.js</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">V</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Vue.js</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">TS</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">TypeScript</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">TW</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Tailwind CSS</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">A</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Angular</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Backend Technologies */}
-      <section className="bg-muted/30 px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
-              Backend
-            </h2>
-            <p className="mt-2 text-muted-foreground">Powerful server-side technologies</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">📦</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Node.js</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-foreground">E</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Express.js</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">☕</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Java</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">🐍</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Python</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">🦀</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Rust</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">Go</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Golang</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Cloud Platforms */}
-      <section className="px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold">
-              <span style={{ color: primaryColor }}>Cloud</span>{" "}
-              <span style={{ color: secondaryColor }}>Infrastructure</span>
-            </h2>
-            <p className="mt-2 text-muted-foreground">Scalable cloud services and deployment</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">☁️</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">AWS</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">Az</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Azure</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">GCP</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Google Cloud</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-foreground">▲</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Vercel</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">🐳</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Docker</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">K8s</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Kubernetes</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Database */}
-      <section className="bg-muted/30 px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold">
-              <span style={{ color: primaryColor }}>Database</span>{" "}
-              <span style={{ color: secondaryColor }}>Storage</span>
-            </h2>
-            <p className="mt-2 text-muted-foreground">Reliable data management solutions</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">🐘</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">PostgreSQL</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">🍃</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">MongoDB</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">🔥</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Redis</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">MySQL</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">MySQL</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">📊</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">DynamoDB</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-foreground">S3</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Amazon S3</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* DevOps & Tools */}
-      <section className="px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold">
-              <span style={{ color: primaryColor }}>DevOps</span> <span style={{ color: secondaryColor }}>CI/CD</span>
-            </h2>
-            <p className="mt-2 text-muted-foreground">Automation and continuous delivery</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">Git</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Git</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-foreground">GH</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">GitHub Actions</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">🦊</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">GitLab CI</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">J</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Jenkins</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">TF</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Terraform</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">🎯</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Ansible</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Blockchain */}
-      <section className="bg-muted/30 px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold">
-              <span style={{ color: primaryColor }}>Blockchain</span>{" "}
-              <span style={{ color: secondaryColor }}>Web3</span>
-            </h2>
-            <p className="mt-2 text-muted-foreground">Decentralized technologies</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">⟠</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Ethereum</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">◎</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Solana</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-secondary">W3</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Web3.js</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-accent">Sol</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Solidity</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-primary">HH</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">Hardhat</p>
-            </Card>
-
-            <Card className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
-              <div className="text-4xl font-bold text-foreground">IPFS</div>
-              <p className="mt-3 text-center text-sm font-medium text-foreground">IPFS</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  )
+			<Footer />
+		</div>
+	)
 }

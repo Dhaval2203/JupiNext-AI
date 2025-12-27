@@ -152,3 +152,25 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+.jupinext-logo span {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+/* subtle 3D depth */
+.jupinext-logo span::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  filter: blur(1px);
+  opacity: 0.25;
+}
+
+/* Optional stronger emphasis on N */
+.jupinext-logo .next {
+  font-weight: 900;
+}
