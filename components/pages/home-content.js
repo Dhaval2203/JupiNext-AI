@@ -48,7 +48,7 @@ export default function HomeContent() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span style={{ color: primaryColor }}>Our</span> <span style={{ color: secondaryColor }}>Services</span>
+              Our <span style={{ color: primaryColor }}>Services</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Comprehensive IT solutions tailored to your business needs
@@ -124,8 +124,8 @@ export default function HomeContent() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span style={{ color: primaryColor }}>Why Choose</span>{" "}
-              <span style={{ color: secondaryColor }}>JupiNext</span>
+              Why <span style={{ color: primaryColor }}>Choose</span> <span style={{ color: primaryColor }}>Jupi</span>
+              <span style={{ color: secondaryColor }}>Next</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Built on principles of innovation, security, and excellence

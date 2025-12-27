@@ -51,7 +51,7 @@ export default function ProcessPage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
-            <span style={{ color: primaryColor }}>Our Development</span>{" "}
+            <span style={{ color: "black" }}>Our</span> <span style={{ color: primaryColor }}>Development</span>{" "}
             <span style={{ color: secondaryColor }}>Process</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
@@ -89,7 +89,7 @@ export default function ProcessPage() {
           <div className="mt-16 space-y-12">
             <Card className="rounded-xl border border-border bg-card p-8">
               <h2 className="text-2xl font-bold">
-                <span style={{ color: primaryColor }}>Why Our Process</span>{" "}
+                <span style={{ color: "black" }}>Why</span> <span style={{ color: primaryColor }}>Our Process</span>{" "}
                 <span style={{ color: secondaryColor }}>Works</span>
               </h2>
               <div className="mt-6 grid gap-6 md:grid-cols-2">

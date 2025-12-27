@@ -9,7 +9,8 @@ export default function AboutContent() {
       <section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
-            <span style={{ color: primaryColor }}>About</span> <span style={{ color: secondaryColor }}>JupiNext</span>
+            About <span style={{ color: primaryColor }}>Jupi</span>
+            <span style={{ color: secondaryColor }}>Next</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Empowering businesses with innovative technology solutions since 2016. We're passionate about transforming
@@ -52,7 +53,7 @@ export default function AboutContent() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span style={{ color: primaryColor }}>Our Core</span>{" "}
+              Our <span style={{ color: primaryColor }}>Core</span>{" "}
               <span style={{ color: secondaryColor }}>Values</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">The principles that guide everything we do</p>

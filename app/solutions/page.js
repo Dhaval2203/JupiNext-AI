@@ -186,7 +186,7 @@ export default function SolutionsPage() {
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            <span style={{ color: primaryColor }}>Let's Build Your Industry</span>{" "}
+            Let's Build Your <span style={{ color: primaryColor }}>Industry</span>{" "}
             <span style={{ color: secondaryColor }}>Solution</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">

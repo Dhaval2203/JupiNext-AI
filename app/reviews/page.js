@@ -133,7 +133,7 @@ export default function ReviewsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span style={{ color: primaryColor }}>Trusted by Clients</span>{" "}
+              Trusted <span style={{ color: primaryColor }}>by Clients</span>{" "}
               <span style={{ color: secondaryColor }}>Worldwide</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">Our commitment to excellence shows in the numbers</p>

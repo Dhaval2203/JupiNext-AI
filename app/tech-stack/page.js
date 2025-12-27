@@ -81,7 +81,7 @@ export default function TechStackPage() {
       <section className="bg-muted/30 px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: secondaryColor }}>
+            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
               Backend
             </h2>
             <p className="mt-2 text-muted-foreground">Powerful server-side technologies</p>
@@ -125,8 +125,9 @@ export default function TechStackPage() {
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
-              Cloud & Infrastructure
+            <h2 className="text-3xl font-bold">
+              <span style={{ color: primaryColor }}>Cloud</span>{" "}
+              <span style={{ color: secondaryColor }}>Infrastructure</span>
             </h2>
             <p className="mt-2 text-muted-foreground">Scalable cloud services and deployment</p>
           </div>
@@ -169,8 +170,9 @@ export default function TechStackPage() {
       <section className="bg-muted/30 px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: secondaryColor }}>
-              Database & Storage
+            <h2 className="text-3xl font-bold">
+              <span style={{ color: primaryColor }}>Database</span>{" "}
+              <span style={{ color: secondaryColor }}>Storage</span>
             </h2>
             <p className="mt-2 text-muted-foreground">Reliable data management solutions</p>
           </div>
@@ -213,8 +215,8 @@ export default function TechStackPage() {
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
-              DevOps & CI/CD
+            <h2 className="text-3xl font-bold">
+              <span style={{ color: primaryColor }}>DevOps</span> <span style={{ color: secondaryColor }}>CI/CD</span>
             </h2>
             <p className="mt-2 text-muted-foreground">Automation and continuous delivery</p>
           </div>
@@ -257,8 +259,9 @@ export default function TechStackPage() {
       <section className="bg-muted/30 px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold" style={{ color: secondaryColor }}>
-              Blockchain & Web3
+            <h2 className="text-3xl font-bold">
+              <span style={{ color: primaryColor }}>Blockchain</span>{" "}
+              <span style={{ color: secondaryColor }}>Web3</span>
             </h2>
             <p className="mt-2 text-muted-foreground">Decentralized technologies</p>
           </div>

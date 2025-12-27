@@ -243,7 +243,7 @@ export default function ServicesPage() {
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            <span style={{ color: primaryColor }}>Ready to Get</span>{" "}
+            Ready <span style={{ color: primaryColor }}>to Get</span>{" "}
             <span style={{ color: secondaryColor }}>Started?</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">

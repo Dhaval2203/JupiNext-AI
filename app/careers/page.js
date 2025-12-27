@@ -113,7 +113,7 @@ export default function CareersPage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
-            <span style={{ color: primaryColor }}>Join Our</span> <span style={{ color: secondaryColor }}>Team</span>
+            Join <span style={{ color: primaryColor }}>Our</span> <span style={{ color: secondaryColor }}>Team</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Build the future with us. We're looking for talented individuals who are passionate about technology and
@@ -127,8 +127,8 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              <span style={{ color: primaryColor }}>Why Work at</span>{" "}
-              <span style={{ color: secondaryColor }}>JupiNext</span>
+              Why Work at <span style={{ color: primaryColor }}>Jupi</span>
+              <span style={{ color: secondaryColor }}>Next</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               We offer more than just a job - we offer a career path and a supportive environment
@@ -271,7 +271,7 @@ export default function CareersPage() {
       <section className="px-6 py-24 lg:px-8">
         <Card className="mx-auto max-w-4xl rounded-xl border border-border bg-card p-12 text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            <span style={{ color: primaryColor }}>Don't See Your</span>{" "}
+            Don't <span style={{ color: primaryColor }}>See Your</span>{" "}
             <span style={{ color: secondaryColor }}>Role?</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
