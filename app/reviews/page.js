@@ -41,7 +41,7 @@ export default function ReviewsPage() {
     {
       name: "David Chen",
       role: "Operations Director",
-      rating: 5,
+      rating: 4,
       review:
         "The blockchain solution JupiNext built for our supply chain has revolutionized our operations. Their deep technical knowledge and innovative approach helped us achieve transparency we never thought possible. The implementation was smooth, and their ongoing support has been fantastic.",
       highlights: ["revolutionized", "deep technical knowledge", "innovative", "smooth", "fantastic"],
@@ -74,33 +74,33 @@ export default function ReviewsPage() {
       highlights: ["rock solid", "improved significantly", "never been better", "impressive", "excellent training"],
       initials: "LA",
     },
-    {
-      name: "Robert Martinez",
-      role: "Business Owner",
-      rating: 5,
-      review:
-        "JupiNext helped us automate several business processes using AI, which has saved us countless hours and improved accuracy. The solutions they built are intuitive and easy to use. Their team took the time to understand our workflow and created custom tools that fit perfectly into our operations.",
-      highlights: ["automate", "saved", "improved accuracy", "intuitive", "perfectly"],
-      initials: "RM",
-    },
-    {
-      name: "Amanda Foster",
-      role: "Project Lead",
-      rating: 5,
-      review:
-        "I've worked with many development agencies, but JupiNext stands out for their professionalism and technical skills. They consistently delivered high-quality code, met all deadlines, and were proactive in suggesting improvements. The collaboration was seamless from start to finish.",
-      highlights: ["stands out", "professionalism", "consistently", "high-quality", "proactive", "seamless"],
-      initials: "AF",
-    },
-    {
-      name: "Kevin Thompson",
-      role: "Digital Transformation Lead",
-      rating: 5,
-      review:
-        "JupiNext was instrumental in our digital transformation journey. They migrated our entire infrastructure to the cloud with zero downtime and built new web applications that have significantly improved our customer experience. Their strategic thinking and execution were outstanding.",
-      highlights: ["instrumental", "zero downtime", "significantly improved", "strategic thinking", "outstanding"],
-      initials: "KT",
-    },
+    // {
+    //   name: "Robert Martinez",
+    //   role: "Business Owner",
+    //   rating: 5,
+    //   review:
+    //     "JupiNext helped us automate several business processes using AI, which has saved us countless hours and improved accuracy. The solutions they built are intuitive and easy to use. Their team took the time to understand our workflow and created custom tools that fit perfectly into our operations.",
+    //   highlights: ["automate", "saved", "improved accuracy", "intuitive", "perfectly"],
+    //   initials: "RM",
+    // },
+    // {
+    //   name: "Amanda Foster",
+    //   role: "Project Lead",
+    //   rating: 5,
+    //   review:
+    //     "I've worked with many development agencies, but JupiNext stands out for their professionalism and technical skills. They consistently delivered high-quality code, met all deadlines, and were proactive in suggesting improvements. The collaboration was seamless from start to finish.",
+    //   highlights: ["stands out", "professionalism", "consistently", "high-quality", "proactive", "seamless"],
+    //   initials: "AF",
+    // },
+    // {
+    //   name: "Kevin Thompson",
+    //   role: "Digital Transformation Lead",
+    //   rating: 5,
+    //   review:
+    //     "JupiNext was instrumental in our digital transformation journey. They migrated our entire infrastructure to the cloud with zero downtime and built new web applications that have significantly improved our customer experience. Their strategic thinking and execution were outstanding.",
+    //   highlights: ["instrumental", "zero downtime", "significantly improved", "strategic thinking", "outstanding"],
+    //   initials: "KT",
+    // },
   ]
 
   const toggleFlip = (index) => {
@@ -148,54 +148,67 @@ export default function ReviewsPage() {
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="group relative h-[320px] cursor-pointer perspective-1000"
+                className="relative h-[320px] cursor-pointer perspective-1000"
                 onClick={() => toggleFlip(index)}
               >
-                {/* Front of Card - Name and Designation */}
-                <Card
-                  className={`absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-8 backface-hidden ${flippedCards[index] ? "pointer-events-none" : ""
+                {/* ROTATING WRAPPER */}
+                <div
+                  className={`relative h-full w-full preserve-3d transition-transform duration-700 ${flippedCards[index] ? "rotate-y-180" : ""
                     }`}
                 >
-                  <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
-                    <span className="text-3xl font-bold text-primary">{review.initials}</span>
-                  </div>
-                  <h3 className="mt-6 text-2xl font-bold text-foreground">{review.name}</h3>
-                  <p className="mt-2 text-lg text-muted-foreground">{review.role}</p>
-                  <div className="mt-4 flex items-center gap-1">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="mt-4 text-sm text-muted-foreground">Tap to read review</p>
-                </Card>
+                  {/* FRONT */}
+                  <Card className="absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-8 backface-hidden">
+                    {/* <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
+                      <span className="text-3xl font-bold text-primary">{review.initials}</span>
+                    </div> */}
 
-                {/* Back of Card - Review Text */}
-                <Card
-                  className={`absolute inset-0 flex flex-col justify-between rounded-xl border border-border bg-card p-8 backface-hidden rotate-y-180 ${!flippedCards[index] ? "pointer-events-none" : ""
-                    }`}
-                >
-                  <div>
-                    <div className="mb-3 flex items-center gap-1">
+                    <h3 className="mt-6 text-2xl font-bold" style={{ color: primaryColor }}>{review.name}</h3>
+                    <p className="mt-2 text-lg text-muted-foreground" style={{ color: secondaryColor }}>{review.role}</p>
+
+                    <div className="mt-4 flex gap-1">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm italic leading-relaxed text-muted-foreground">
-                      {highlightText(review.review, review.highlights)}
+
+                    <p className="mt-4 text-sm text-muted-foreground">
+                      Tap to read review
                     </p>
-                  </div>
-                  <div className="mt-4 flex items-center gap-3 border-t border-border pt-4">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
-                      <span className="text-sm font-semibold text-primary">{review.initials}</span>
-                    </div>
+                  </Card>
+
+                  {/* BACK */}
+                  <Card className="absolute inset-0 flex flex-col justify-between rounded-xl border border-border bg-card p-8 backface-hidden rotate-y-180">
                     <div>
-                      <div className="text-sm font-semibold text-foreground">{review.name}</div>
-                      <div className="text-xs text-muted-foreground">{review.role}</div>
+                      <div className="mb-3 flex gap-1">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+
+                      <p className="text-sm italic leading-relaxed text-muted-foreground">
+                        {highlightText(review.review, review.highlights)}
+                      </p>
                     </div>
-                  </div>
-                  <p className="mt-2 text-center text-xs text-muted-foreground">Tap to go back</p>
-                </Card>
+
+                    <div className="mt-3 flex items-center gap-3 border-t pt-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                        <span className="text-sm font-semibold text-primary">
+                          {review.initials}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold">{review.name}</div>
+                        <div className="text-xs text-muted-foreground">{review.role}</div>
+                      </div>
+                    </div>
+
+                    {/* <p className="mt-2 text-center text-xs text-muted-foreground">
+                      Tap to go back
+                    </p> */}
+                  </Card>
+                </div>
               </div>
+
             ))}
           </div>
         </div>

@@ -257,7 +257,7 @@ export default function CareersPage() {
                     </div>
                     <div className="mt-6 flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-3 text-sm border border-primary/20">
                       <Mail className="h-4 w-4 text-primary" />
-                      <span className="font-semibold text-foreground">Apply at:</span>
+                      <span className="font-semibold text-foreground">Apply :</span>
                       <a href="mailto:hr@jupinext.com" className="text-primary hover:underline font-medium">
                         hr@jupinext.com
                       </a>

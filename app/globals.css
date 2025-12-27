@@ -5,9 +5,12 @@
 
 :root {
   /* JupiNext Material Design color system */
-  --background: oklch(0.99 0 0); /* Near white */
-  --foreground: oklch(0.2 0 0); /* Dark text */
-  --card: oklch(1 0 0); /* Pure white cards */
+  --background: oklch(0.99 0 0);
+  /* Near white */
+  --foreground: oklch(0.2 0 0);
+  /* Dark text */
+  --card: oklch(1 0 0);
+  /* Pure white cards */
   --card-foreground: oklch(0.2 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0 0);
@@ -36,7 +39,8 @@
   --chart-3: oklch(0.45 0.14 265);
   --chart-4: oklch(0.7 0.15 150);
   --chart-5: oklch(0.6 0.18 80);
-  --radius: 0.875rem; /* 14px for Material Design */
+  --radius: 0.875rem;
+  /* 14px for Material Design */
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.2 0 0);
   --sidebar-primary: oklch(0.62 0.12 192);
@@ -127,7 +131,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
