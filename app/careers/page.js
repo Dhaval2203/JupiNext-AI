@@ -2,7 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { MapPin, Clock, Briefcase, ArrowRight, Mail } from "lucide-react"
+import { MapPin, Clock, Briefcase, ArrowRight, Mail, DollarSign } from "lucide-react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function CareersPage() {
@@ -147,7 +147,9 @@ export default function CareersPage() {
             </Card>
 
             <Card className="rounded-xl border border-border bg-card p-6 text-center">
-              <div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4"></div>
+              <div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4">
+                <DollarSign className="h-6 w-6 text-primary" />
+              </div>
               <h3 className="text-lg font-semibold text-foreground">Competitive Salary</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Industry-leading compensation with performance bonuses
