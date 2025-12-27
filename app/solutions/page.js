@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { DollarSign, HeartPulse, ShoppingCart, Layers, GraduationCap, Building2, ArrowRight } from "lucide-react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function SolutionsPage() {
   return (
@@ -13,8 +14,9 @@ export default function SolutionsPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Industry Solutions
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Industry</span>{" "}
+            <span style={{ color: secondaryColor }}>Solutions</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Specialized technology solutions tailored for your industry's unique challenges and opportunities.
@@ -170,8 +172,9 @@ export default function SolutionsPage() {
       {/* CTA Section */}
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Let's Build Your Industry Solution
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <span style={{ color: primaryColor }}>Let's Build Your Industry</span>{" "}
+            <span style={{ color: secondaryColor }}>Solution</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Tell us about your unique challenges and we'll craft a solution that fits your industry perfectly.

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Code2, Smartphone, Cloud, Palette, Shield, Zap, Settings, ArrowRight, CheckCircle } from "lucide-react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function ServicesPage() {
   return (
@@ -13,7 +14,9 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">Our Services</h1>
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Our</span> <span style={{ color: secondaryColor }}>Services</span>
+          </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Comprehensive technology solutions designed to transform your business and drive sustainable growth.
           </p>
@@ -226,7 +229,10 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Ready to Get Started?</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <span style={{ color: primaryColor }}>Ready to Get</span>{" "}
+            <span style={{ color: secondaryColor }}>Started?</span>
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Let's discuss how our services can help transform your business.
           </p>

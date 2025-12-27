@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { useState } from "react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -39,7 +40,9 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">Get in Touch</h1>
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Get in</span> <span style={{ color: secondaryColor }}>Touch</span>
+          </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Ready to start your next project? Let's discuss how we can help transform your vision into reality.
           </p>

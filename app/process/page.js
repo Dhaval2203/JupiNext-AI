@@ -2,6 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { FileSearch, Layout, Code, TestTube, Rocket, Wrench } from "lucide-react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 const softwareDevelopmentProcessSteps = [
   {
@@ -49,8 +50,9 @@ export default function ProcessPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Our Development Process
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Our Development</span>{" "}
+            <span style={{ color: secondaryColor }}>Process</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             A structured, transparent approach to delivering quality software solutions that exceed expectations at
@@ -86,7 +88,10 @@ export default function ProcessPage() {
           {/* Additional Process Details */}
           <div className="mt-16 space-y-12">
             <Card className="rounded-xl border border-border bg-card p-8">
-              <h2 className="text-2xl font-bold text-card-foreground">Why Our Process Works</h2>
+              <h2 className="text-2xl font-bold">
+                <span style={{ color: primaryColor }}>Why Our Process</span>{" "}
+                <span style={{ color: secondaryColor }}>Works</span>
+              </h2>
               <div className="mt-6 grid gap-6 md:grid-cols-2">
                 <div>
                   <h3 className="font-semibold text-card-foreground">Transparency</h3>

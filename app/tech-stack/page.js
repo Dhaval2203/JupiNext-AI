@@ -1,6 +1,7 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Card } from "@/components/ui/card"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function TechStackPage() {
   return (
@@ -10,8 +11,8 @@ export default function TechStackPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Technology Stack
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Technology</span> <span style={{ color: secondaryColor }}>Stack</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             We leverage industry-leading technologies to build robust, scalable, and future-proof solutions.
@@ -23,7 +24,9 @@ export default function TechStackPage() {
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Frontend</h2>
+            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
+              Frontend
+            </h2>
             <p className="mt-2 text-muted-foreground">Modern UI frameworks and libraries</p>
           </div>
 
@@ -65,7 +68,9 @@ export default function TechStackPage() {
       <section className="bg-muted/30 px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Backend</h2>
+            <h2 className="text-3xl font-bold" style={{ color: secondaryColor }}>
+              Backend
+            </h2>
             <p className="mt-2 text-muted-foreground">Powerful server-side technologies</p>
           </div>
 
@@ -107,7 +112,9 @@ export default function TechStackPage() {
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Cloud & Infrastructure</h2>
+            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
+              Cloud & Infrastructure
+            </h2>
             <p className="mt-2 text-muted-foreground">Scalable cloud services and deployment</p>
           </div>
 
@@ -149,7 +156,9 @@ export default function TechStackPage() {
       <section className="bg-muted/30 px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Database & Storage</h2>
+            <h2 className="text-3xl font-bold" style={{ color: secondaryColor }}>
+              Database & Storage
+            </h2>
             <p className="mt-2 text-muted-foreground">Reliable data management solutions</p>
           </div>
 
@@ -191,7 +200,9 @@ export default function TechStackPage() {
       <section className="px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground">DevOps & CI/CD</h2>
+            <h2 className="text-3xl font-bold" style={{ color: primaryColor }}>
+              DevOps & CI/CD
+            </h2>
             <p className="mt-2 text-muted-foreground">Automation and continuous delivery</p>
           </div>
 
@@ -233,7 +244,9 @@ export default function TechStackPage() {
       <section className="bg-muted/30 px-6 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Blockchain & Web3</h2>
+            <h2 className="text-3xl font-bold" style={{ color: secondaryColor }}>
+              Blockchain & Web3
+            </h2>
             <p className="mt-2 text-muted-foreground">Decentralized technologies</p>
           </div>
 

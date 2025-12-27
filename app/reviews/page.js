@@ -2,6 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { Star } from "lucide-react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function ReviewsPage() {
   const reviews = [
@@ -86,7 +87,9 @@ export default function ReviewsPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">Client Reviews</h1>
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Client</span> <span style={{ color: secondaryColor }}>Reviews</span>
+          </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Hear what our clients have to say about working with JupiNext. Real feedback from real projects.
           </p>
@@ -129,8 +132,9 @@ export default function ReviewsPage() {
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Trusted by Clients Worldwide
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <span style={{ color: primaryColor }}>Trusted by Clients</span>{" "}
+              <span style={{ color: secondaryColor }}>Worldwide</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">Our commitment to excellence shows in the numbers</p>
           </div>

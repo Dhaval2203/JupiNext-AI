@@ -3,6 +3,7 @@ import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { MapPin, Clock, Briefcase, ArrowRight } from "lucide-react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function CareersPage() {
   const jobOpenings = [
@@ -111,7 +112,9 @@ export default function CareersPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">Join Our Team</h1>
+          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
+            <span style={{ color: primaryColor }}>Join Our</span> <span style={{ color: secondaryColor }}>Team</span>
+          </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Build the future with us. We're looking for talented individuals who are passionate about technology and
             innovation.
@@ -123,7 +126,10 @@ export default function CareersPage() {
       <section className="px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Why Work at JupiNext</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <span style={{ color: primaryColor }}>Why Work at</span>{" "}
+              <span style={{ color: secondaryColor }}>JupiNext</span>
+            </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               We offer more than just a job - we offer a career path and a supportive environment
             </p>
@@ -199,7 +205,9 @@ export default function CareersPage() {
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Open Positions</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <span style={{ color: primaryColor }}>Open</span> <span style={{ color: secondaryColor }}>Positions</span>
+            </h2>
             <p className="mt-4 text-lg text-muted-foreground">Find your next opportunity with us</p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-6 py-3 text-sm">
               <span className="font-semibold text-foreground">Apply at:</span>
@@ -262,7 +270,10 @@ export default function CareersPage() {
       {/* CTA Section */}
       <section className="px-6 py-24 lg:px-8">
         <Card className="mx-auto max-w-4xl rounded-xl border border-border bg-card p-12 text-center">
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Don't See Your Role?</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            <span style={{ color: primaryColor }}>Don't See Your</span>{" "}
+            <span style={{ color: secondaryColor }}>Role?</span>
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future
             opportunities.

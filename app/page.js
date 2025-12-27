@@ -22,6 +22,7 @@ import {
   Rocket,
   Wrench,
 } from "lucide-react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 const softwareDevelopmentProcessSteps = [
   {
@@ -94,7 +95,9 @@ export default function HomePage() {
       <section className="px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Services</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <span style={{ color: primaryColor }}>Our</span> <span style={{ color: secondaryColor }}>Services</span>
+            </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Comprehensive IT solutions tailored to your business needs
             </p>
@@ -168,7 +171,10 @@ export default function HomePage() {
       <section className="bg-muted/30 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Why Choose JupiNext</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              <span style={{ color: primaryColor }}>Why Choose</span>{" "}
+              <span style={{ color: secondaryColor }}>JupiNext</span>
+            </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Built on principles of innovation, security, and excellence
             </p>
