@@ -1,5 +1,5 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
@@ -15,7 +15,51 @@ import {
   Users,
   Award,
   Clock,
+  FileSearch,
+  Layout,
+  Code,
+  TestTube,
+  Rocket,
+  Wrench,
 } from "lucide-react"
+
+const softwareDevelopmentProcessSteps = [
+  {
+    title: "Requirement Analysis",
+    description:
+      "Gain a clear understanding of your requirements, goals, and the challenges the software is designed to solve.",
+    icon: FileSearch,
+  },
+  {
+    title: "Planning & Design",
+    description:
+      "Develop a comprehensive plan and blueprint & design a detailed strategy that includes a well-structured architecture, intuitive user interface, and seamless user experience.",
+    icon: Layout,
+  },
+  {
+    title: "Development",
+    description:
+      "Develop software by ensuring each module is aligned with the design and integrates seamlessly with the overall functionality.",
+    icon: Code,
+  },
+  {
+    title: "Testing",
+    description:
+      "Conduct thorough evaluations to identify and resolve bugs, optimize performance, and ensure reliability.",
+    icon: TestTube,
+  },
+  {
+    title: "Deployment",
+    description: "Deploy the software in a live environment, ensuring it is available for end-users.",
+    icon: Rocket,
+  },
+  {
+    title: "Maintenance & Support",
+    description:
+      "Offer continuous support to manage updates, resolve issues, and implement improvements, ensuring the software remains optimized.",
+    icon: Wrench,
+  },
+]
 
 export default function HomePage() {
   return (
@@ -26,7 +70,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
-            Where the Next Begins
+            Where the <span style={{ color: "#0ea5a4" }}>Next</span> <span style={{ color: "#ef4444" }}>Begins</span>
           </h1>
           <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
             Your future-ready IT partner delivering innovative solutions in web development, mobile applications, cloud
@@ -170,6 +214,39 @@ export default function HomePage() {
                 Transparent processes with consistent updates and feedback
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Software Development Process Section */}
+      <section className="px-6 py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Development Process</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              A structured approach to deliver quality software solutions
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {softwareDevelopmentProcessSteps.map((step, index) => {
+              const Icon = step.icon
+              return (
+                <Card
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl border border-border bg-card p-8 transition-all hover:shadow-lg hover:-translate-y-1"
+                >
+                  <div className="absolute right-4 top-4 text-6xl font-bold text-primary/5">{index + 1}</div>
+                  <div className="relative">
+                    <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-card-foreground">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+                  </div>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>

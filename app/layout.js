@@ -1,12 +1,10 @@
-import type React from "react"
-import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "JupiNext - Where the Next Begins",
   description:
     "Future-ready IT solutions: Web development, mobile apps, cloud services, UI/UX design, blockchain & AI.",
@@ -40,17 +38,13 @@ export const metadata: Metadata = {
   },
 }
 
-export const viewport: Viewport = {
+export const viewport = {
   themeColor: "#0ea5a4",
   width: "device-width",
   initialScale: 1,
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} font-sans antialiased`}>

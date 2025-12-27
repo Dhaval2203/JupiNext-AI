@@ -1,5 +1,5 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { Target, Eye, Lightbulb, Users, Heart, Rocket, TrendingUp, CheckCircle } from "lucide-react"
 
