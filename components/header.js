@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import { primaryColor, secondaryColor } from "@/lib/colors"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -18,8 +19,8 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="text-2xl font-bold">
-              <span style={{ color: "#0ea5a4" }}>Jupi</span>
-              <span style={{ color: "#ef4444" }}>Next</span>
+              <span style={{ color: primaryColor }}>Jupi</span>
+              <span style={{ color: secondaryColor }}>Next</span>
             </span>
           </Link>
         </div>
@@ -46,10 +47,10 @@ export default function Header() {
               isActive("/") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/") ? "#0ea5a4" : undefined,
+              color: isActive("/") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/")) e.currentTarget.style.color = ""
@@ -59,7 +60,7 @@ export default function Header() {
             {isActive("/") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -69,10 +70,10 @@ export default function Header() {
               isActive("/about") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/about") ? "#0ea5a4" : undefined,
+              color: isActive("/about") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/about")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/about")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/about")) e.currentTarget.style.color = ""
@@ -82,7 +83,7 @@ export default function Header() {
             {isActive("/about") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -92,10 +93,10 @@ export default function Header() {
               isActive("/services") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/services") ? "#0ea5a4" : undefined,
+              color: isActive("/services") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/services")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/services")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/services")) e.currentTarget.style.color = ""
@@ -105,7 +106,7 @@ export default function Header() {
             {isActive("/services") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -115,10 +116,10 @@ export default function Header() {
               isActive("/solutions") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/solutions") ? "#0ea5a4" : undefined,
+              color: isActive("/solutions") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/solutions")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/solutions")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/solutions")) e.currentTarget.style.color = ""
@@ -128,7 +129,7 @@ export default function Header() {
             {isActive("/solutions") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -138,10 +139,10 @@ export default function Header() {
               isActive("/process") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/process") ? "#0ea5a4" : undefined,
+              color: isActive("/process") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/process")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/process")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/process")) e.currentTarget.style.color = ""
@@ -151,7 +152,7 @@ export default function Header() {
             {isActive("/process") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -161,10 +162,10 @@ export default function Header() {
               isActive("/tech-stack") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/tech-stack") ? "#0ea5a4" : undefined,
+              color: isActive("/tech-stack") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/tech-stack")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/tech-stack")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/tech-stack")) e.currentTarget.style.color = ""
@@ -174,7 +175,7 @@ export default function Header() {
             {isActive("/tech-stack") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -184,10 +185,10 @@ export default function Header() {
               isActive("/reviews") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/reviews") ? "#0ea5a4" : undefined,
+              color: isActive("/reviews") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/reviews")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/reviews")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/reviews")) e.currentTarget.style.color = ""
@@ -197,7 +198,7 @@ export default function Header() {
             {isActive("/reviews") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -207,10 +208,10 @@ export default function Header() {
               isActive("/careers") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/careers") ? "#0ea5a4" : undefined,
+              color: isActive("/careers") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/careers")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/careers")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/careers")) e.currentTarget.style.color = ""
@@ -220,7 +221,7 @@ export default function Header() {
             {isActive("/careers") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -230,10 +231,10 @@ export default function Header() {
               isActive("/contact") ? "font-bold" : "text-foreground/70"
             }`}
             style={{
-              color: isActive("/contact") ? "#0ea5a4" : undefined,
+              color: isActive("/contact") ? primaryColor : undefined,
             }}
             onMouseEnter={(e) => {
-              if (!isActive("/contact")) e.currentTarget.style.color = "#0ea5a4"
+              if (!isActive("/contact")) e.currentTarget.style.color = secondaryColor
             }}
             onMouseLeave={(e) => {
               if (!isActive("/contact")) e.currentTarget.style.color = ""
@@ -243,7 +244,7 @@ export default function Header() {
             {isActive("/contact") && (
               <span
                 className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full"
-                style={{ backgroundColor: "#0ea5a4" }}
+                style={{ backgroundColor: primaryColor }}
               ></span>
             )}
           </Link>
@@ -252,7 +253,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button
             asChild
-            style={{ backgroundColor: "#0ea5a4", color: "white" }}
+            style={{ backgroundColor: primaryColor, color: "white" }}
             className="hover:opacity-90 transition-opacity"
           >
             <Link href="/contact">Get Started</Link>
@@ -270,7 +271,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/") ? "#0ea5a4" : undefined,
+                color: isActive("/") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -283,7 +284,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/about") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/about") ? "#0ea5a4" : undefined,
+                color: isActive("/about") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -296,7 +297,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/services") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/services") ? "#0ea5a4" : undefined,
+                color: isActive("/services") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -309,7 +310,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/solutions") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/solutions") ? "#0ea5a4" : undefined,
+                color: isActive("/solutions") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -322,7 +323,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/process") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/process") ? "#0ea5a4" : undefined,
+                color: isActive("/process") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -335,7 +336,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/tech-stack") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/tech-stack") ? "#0ea5a4" : undefined,
+                color: isActive("/tech-stack") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -348,7 +349,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/reviews") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/reviews") ? "#0ea5a4" : undefined,
+                color: isActive("/reviews") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -361,7 +362,7 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/careers") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/careers") ? "#0ea5a4" : undefined,
+                color: isActive("/careers") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -374,14 +375,14 @@ export default function Header() {
               }`}
               style={{
                 backgroundColor: isActive("/contact") ? "rgba(14, 165, 164, 0.1)" : undefined,
-                color: isActive("/contact") ? "#0ea5a4" : undefined,
+                color: isActive("/contact") ? primaryColor : undefined,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
             <div className="pt-2">
-              <Button asChild className="w-full" style={{ backgroundColor: "#0ea5a4", color: "white" }}>
+              <Button asChild className="w-full" style={{ backgroundColor: primaryColor, color: "white" }}>
                 <Link href="/contact">Get Started</Link>
               </Button>
             </div>
