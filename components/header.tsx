@@ -13,7 +13,10 @@ export function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-accent">JupiNext</span>
+            <span className="text-2xl font-bold">
+              <span style={{ color: "#0ea5a4" }}>Jupi</span>
+              <span style={{ color: "#ef4444" }}>Next</span>
+            </span>
           </Link>
         </div>
 
