@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
+import Image from "next/image"
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -17,12 +18,22 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold">
-              <span style={{ color: primaryColor }}>Jupi</span>
-              <span style={{ color: secondaryColor }}>Next</span>
-            </span>
-          </Link>
+          <div className="flex lg:flex-1 items-center">
+            <Link href="/" className="flex items-center -m-1.5 p-1.5">
+              {/* Logo from public folder */}
+              <Image
+                src="/logo.png"
+                alt="JupiNext Logo"
+                width={100}
+                height={100}
+                className="mr-1"
+              />
+              <span className="text-2xl font-bold">
+                <span style={{ color: primaryColor }}>Jupi</span>
+                <span style={{ color: secondaryColor }}>Next</span>
+              </span>
+            </Link>
+          </div>
         </div>
 
         <div className="flex lg:hidden">
@@ -43,9 +54,8 @@ export default function Header() {
         <div className="hidden lg:flex lg:gap-x-8">
           <Link
             href="/"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/") ? primaryColor : undefined,
             }}
@@ -66,9 +76,8 @@ export default function Header() {
           </Link>
           <Link
             href="/about"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/about") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/about") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/about") ? primaryColor : undefined,
             }}
@@ -89,9 +98,8 @@ export default function Header() {
           </Link>
           <Link
             href="/services"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/services") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/services") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/services") ? primaryColor : undefined,
             }}
@@ -112,9 +120,8 @@ export default function Header() {
           </Link>
           <Link
             href="/solutions"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/solutions") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/solutions") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/solutions") ? primaryColor : undefined,
             }}
@@ -135,9 +142,8 @@ export default function Header() {
           </Link>
           <Link
             href="/process"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/process") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/process") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/process") ? primaryColor : undefined,
             }}
@@ -158,9 +164,8 @@ export default function Header() {
           </Link>
           <Link
             href="/tech-stack"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/tech-stack") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/tech-stack") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/tech-stack") ? primaryColor : undefined,
             }}
@@ -181,9 +186,8 @@ export default function Header() {
           </Link>
           <Link
             href="/reviews"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/reviews") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/reviews") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/reviews") ? primaryColor : undefined,
             }}
@@ -204,9 +208,8 @@ export default function Header() {
           </Link>
           <Link
             href="/careers"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/careers") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/careers") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/careers") ? primaryColor : undefined,
             }}
@@ -227,9 +230,8 @@ export default function Header() {
           </Link>
           <Link
             href="/contact"
-            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${
-              isActive("/contact") ? "font-bold" : "text-foreground/70"
-            }`}
+            className={`text-sm font-medium leading-6 transition-all duration-200 relative ${isActive("/contact") ? "font-bold" : "text-foreground/70"
+              }`}
             style={{
               color: isActive("/contact") ? primaryColor : undefined,
             }}
@@ -266,9 +268,8 @@ export default function Header() {
           <div className="space-y-1 px-6 pb-4 pt-2">
             <Link
               href="/"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/") ? primaryColor : undefined,
@@ -279,9 +280,8 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/about") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/about") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/about") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/about") ? primaryColor : undefined,
@@ -292,9 +292,8 @@ export default function Header() {
             </Link>
             <Link
               href="/services"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/services") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/services") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/services") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/services") ? primaryColor : undefined,
@@ -305,9 +304,8 @@ export default function Header() {
             </Link>
             <Link
               href="/solutions"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/solutions") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/solutions") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/solutions") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/solutions") ? primaryColor : undefined,
@@ -318,9 +316,8 @@ export default function Header() {
             </Link>
             <Link
               href="/process"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/process") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/process") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/process") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/process") ? primaryColor : undefined,
@@ -331,9 +328,8 @@ export default function Header() {
             </Link>
             <Link
               href="/tech-stack"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/tech-stack") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/tech-stack") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/tech-stack") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/tech-stack") ? primaryColor : undefined,
@@ -344,9 +340,8 @@ export default function Header() {
             </Link>
             <Link
               href="/reviews"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/reviews") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/reviews") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/reviews") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/reviews") ? primaryColor : undefined,
@@ -357,9 +352,8 @@ export default function Header() {
             </Link>
             <Link
               href="/careers"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/careers") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/careers") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/careers") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/careers") ? primaryColor : undefined,
@@ -370,9 +364,8 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${
-                isActive("/contact") ? "font-bold" : "text-foreground/70"
-              }`}
+              className={`block rounded-lg px-3 py-2 text-base font-medium transition-all ${isActive("/contact") ? "font-bold" : "text-foreground/70"
+                }`}
               style={{
                 backgroundColor: isActive("/contact") ? "rgba(14, 165, 164, 0.1)" : undefined,
                 color: isActive("/contact") ? primaryColor : undefined,
