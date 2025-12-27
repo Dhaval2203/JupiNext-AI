@@ -58,6 +58,12 @@ export default function Header() {
             Solutions
           </Link>
           <Link
+            href="/process"
+            className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
+          >
+            Process
+          </Link>
+          <Link
             href="/tech-stack"
             className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
           >
@@ -68,6 +74,12 @@ export default function Header() {
             className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
           >
             Contact
+          </Link>
+          <Link
+            href="/careers"
+            className="text-sm font-medium leading-6 text-foreground transition-colors hover:text-primary"
+          >
+            Careers
           </Link>
         </div>
 
@@ -111,6 +123,13 @@ export default function Header() {
               Solutions
             </Link>
             <Link
+              href="/process"
+              className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Process
+            </Link>
+            <Link
               href="/tech-stack"
               className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted"
               onClick={() => setMobileMenuOpen(false)}
@@ -123,6 +142,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link
+              href="/careers"
+              className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
             </Link>
             <div className="pt-2">
               <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
