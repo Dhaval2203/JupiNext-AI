@@ -290,7 +290,7 @@ export default function ContactPage() {
 										</div>
 
 										<div className="space-y-2">
-											<Label htmlFor="captcha">Capcha *</Label>
+											<Label htmlFor="captcha">Captcha *</Label>
 											<Input
 												id="captcha"
 												name="captcha"
