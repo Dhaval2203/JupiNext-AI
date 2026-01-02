@@ -34,7 +34,7 @@ export async function POST(req) {
             from: `"JupiNext Contact" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`,
             to: [
                 "parekhdhaval1998@gmail.com",
-                // "deepalishrivastava921@gmail.com",
+                "deepalishrivastava921@gmail.com",
             ],
             replyTo: email,
             subject: `New Contact Request | ${name}`,
