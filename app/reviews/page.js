@@ -186,35 +186,69 @@ export default function ReviewsPage() {
 									</Card>
 
 									{/* BACK */}
-									<Card className="absolute inset-0 flex flex-col justify-between rounded-xl border border-border bg-card p-8 backface-hidden rotate-y-180">
-										<div>
+									<Card
+										className="
+    absolute inset-0
+    flex flex-col justify-between
+    rounded-xl border border-border bg-card
+    p-5 sm:p-6 lg:p-8
+    backface-hidden rotate-y-180
+  "
+									>
+										{/* Review Content */}
+										<div className="flex-1 overflow-hidden">
 											<div className="mb-3 flex gap-1">
 												{[...Array(review.rating)].map((_, i) => (
-													<Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+													<Star
+														key={i}
+														className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400"
+													/>
 												))}
 											</div>
 
-											<p className="text-sm italic leading-relaxed text-muted-foreground">
+											<p
+												className="
+        text-xs sm:text-sm
+        italic leading-relaxed
+        text-muted-foreground
+        line-clamp-6 sm:line-clamp-none
+      "
+											>
 												{highlightText(review.review, review.highlights)}
 											</p>
 										</div>
 
-										<div className="mt-3 flex items-center gap-3 border-t pt-4">
-											<div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-												<span className="text-sm font-semibold text-primary">
+										{/* Footer */}
+										<div
+											className="
+      mt-4
+      flex items-center gap-3
+      border-t pt-3 sm:pt-4
+    "
+										>
+											<div
+												className="
+        flex items-center justify-center
+        h-9 w-9 sm:h-10 sm:w-10
+        rounded-full bg-primary/10
+      "
+											>
+												<span className="text-xs sm:text-sm font-semibold text-primary">
 													{review.initials}
 												</span>
 											</div>
-											<div>
-												<div className="text-sm font-semibold">{review.name}</div>
-												<div className="text-xs text-muted-foreground">{review.role}</div>
+
+											<div className="min-w-0">
+												<div className="text-sm font-semibold truncate">
+													{review.name}
+												</div>
+												<div className="text-xs text-muted-foreground truncate">
+													{review.role}
+												</div>
 											</div>
 										</div>
-
-										{/* <p className="mt-2 text-center text-xs text-muted-foreground">
-                      Tap to go back
-                    </p> */}
 									</Card>
+
 								</div>
 							</div>
 
