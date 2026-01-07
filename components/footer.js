@@ -7,13 +7,6 @@ import Image from "next/image"
 export default function Footer() {
 	return (
 		<footer className="relative bg-background pt-20 pb-10 overflow-hidden font-sans border-t border-border/50">
-			{/* Unique Animated Background */}
-			<div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-			<div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-pulse" />
-			<div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] opacity-20 pointer-events-none" />
-			<div className="absolute top-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl opacity-30 pointer-events-none -translate-x-1/2 -translate-y-1/2" />
-			<div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-30 pointer-events-none translate-x-1/3 translate-y-1/3" />
-
 			<div className="container relative mx-auto px-4 md:px-6 z-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 xl:gap-16">
 
