@@ -4,8 +4,7 @@ import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Card } from "@/components/ui/card"
 import { primaryColor, secondaryColor } from "@/lib/colors"
-import { Star } from "lucide-react"
-import Head from "next/head"
+import { Star, Quote } from "lucide-react"
 import { useState } from "react"
 import { useCounter } from '../../lib/useCounter.js'
 
@@ -75,33 +74,6 @@ export default function ReviewsPage() {
 			highlights: ["rock solid", "improved significantly", "never been better", "impressive", "excellent training"],
 			initials: "LA",
 		},
-		// {
-		//   name: "Robert Martinez",
-		//   role: "Business Owner",
-		//   rating: 5,
-		//   review:
-		//     "JupiNext helped us automate several business processes using AI, which has saved us countless hours and improved accuracy. The solutions they built are intuitive and easy to use. Their team took the time to understand our workflow and created custom tools that fit perfectly into our operations.",
-		//   highlights: ["automate", "saved", "improved accuracy", "intuitive", "perfectly"],
-		//   initials: "RM",
-		// },
-		// {
-		//   name: "Amanda Foster",
-		//   role: "Project Lead",
-		//   rating: 5,
-		//   review:
-		//     "I've worked with many development agencies, but JupiNext stands out for their professionalism and technical skills. They consistently delivered high-quality code, met all deadlines, and were proactive in suggesting improvements. The collaboration was seamless from start to finish.",
-		//   highlights: ["stands out", "professionalism", "consistently", "high-quality", "proactive", "seamless"],
-		//   initials: "AF",
-		// },
-		// {
-		//   name: "Kevin Thompson",
-		//   role: "Digital Transformation Lead",
-		//   rating: 5,
-		//   review:
-		//     "JupiNext was instrumental in our digital transformation journey. They migrated our entire infrastructure to the cloud with zero downtime and built new web applications that have significantly improved our customer experience. Their strategic thinking and execution were outstanding.",
-		//   highlights: ["instrumental", "zero downtime", "significantly improved", "strategic thinking", "outstanding"],
-		//   initials: "KT",
-		// },
 	]
 
 	const toggleFlip = (index) => {
@@ -119,7 +91,7 @@ export default function ReviewsPage() {
 			const regex = new RegExp(`(${phrase})`, "gi")
 			highlightedText = highlightedText.replace(
 				regex,
-				`<span style="color: ${primaryColor}; font-weight: 600;">$1</span>`,
+				`<span class="text-primary font-semibold">$1</span>`,
 			)
 		})
 
@@ -139,10 +111,10 @@ export default function ReviewsPage() {
 			<Header />
 
 			{/* Hero Section */}
-			<section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-6 py-24 lg:px-8">
+			<section className="relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background px-6 py-24 lg:px-8">
 				<div className="mx-auto max-w-4xl text-center">
-					<h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">
-						<span style={{ color: primaryColor }}>Client</span> <span style={{ color: secondaryColor }}>Reviews</span>
+					<h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl mb-6">
+						<span className="text-primary">Client</span> <span className="text-secondary">Reviews</span>
 					</h1>
 					<p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
 						Hear what our clients have to say about working with JupiNext. Real feedback from real projects.
@@ -151,13 +123,13 @@ export default function ReviewsPage() {
 			</section>
 
 			{/* Reviews Grid */}
-			<section className="px-6 py-24 lg:px-8">
+			<section className="px-6 py-12 lg:px-8">
 				<div className="mx-auto max-w-7xl">
 					<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 						{reviews.map((review, index) => (
 							<div
 								key={index}
-								className="relative h-[320px] cursor-pointer perspective-1000"
+								className="relative h-[350px] cursor-pointer perspective-1000 group"
 								onClick={() => toggleFlip(index)}
 							>
 								{/* ROTATING WRAPPER */}
@@ -166,88 +138,76 @@ export default function ReviewsPage() {
 										}`}
 								>
 									{/* FRONT */}
-									<Card className="absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-border bg-card p-8 backface-hidden">
-										{/* <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
-                      <span className="text-3xl font-bold text-primary">{review.initials}</span>
-                    </div> */}
+									<div className="absolute inset-0 backface-hidden">
+										<div className="h-full w-full p-[1px] rounded-2xl bg-gradient-to-br from-primary/50 via-transparent to-secondary/50 shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
+											<div className="h-full w-full rounded-2xl bg-card/80 backdrop-blur-md p-8 flex flex-col items-center justify-center relative overflow-hidden">
+												{/* Decorative Background Elements */}
+												<div className="absolute top-0 right-0 p-6 opacity-5">
+													<Quote size={120} className="text-primary" />
+												</div>
 
-										<h3 className="mt-6 text-2xl font-bold" style={{ color: primaryColor }}>{review.name}</h3>
-										<p className="mt-2 text-lg text-muted-foreground" style={{ color: secondaryColor }}>{review.role}</p>
+												<div className="relative z-10 flex flex-col items-center">
+													<div className="w-16 h-16 rounded-full bg-secondary p-0.5 mb-6">
+														<div className="w-full h-full rounded-full bg-card flex items-center justify-center text-xl font-bold">
+															<span className="text-secondary">
+																{review.initials}
+															</span>
+														</div>
+													</div>
 
-										<div className="mt-4 flex gap-1">
-											{[...Array(review.rating)].map((_, i) => (
-												<Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-											))}
+													<h3 className="text-2xl font-bold text-center mb-1 text-primary">{review.name}</h3>
+													<p className="text-sm text-secondary font-medium tracking-wide uppercase mb-4">{review.role}</p>
+
+													<div className="flex gap-1 mb-8">
+														{[...Array(review.rating)].map((_, i) => (
+															<Star key={i} className="h-4 w-4 fill-primary text-primary" />
+														))}
+													</div>
+
+													<p className="text-xs text-muted-foreground flex items-center gap-2 animate-pulse">
+														Tap to read review
+													</p>
+												</div>
+											</div>
 										</div>
-
-										<p className="mt-4 text-sm text-muted-foreground">
-											Tap to read review
-										</p>
-									</Card>
+									</div>
 
 									{/* BACK */}
-									<Card
-										className="
-    absolute inset-0
-    flex flex-col justify-between
-    rounded-xl border border-border bg-card
-    p-5 sm:p-6 lg:p-8
-    backface-hidden rotate-y-180
-  "
-									>
-										{/* Review Content */}
-										<div className="flex-1 overflow-hidden">
-											<div className="mb-3 flex gap-1">
-												{[...Array(review.rating)].map((_, i) => (
-													<Star
-														key={i}
-														className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-yellow-400 text-yellow-400"
-													/>
-												))}
-											</div>
+									<div className="absolute inset-0 backface-hidden rotate-y-180">
+										<div className="h-full w-full p-[1px] rounded-2xl bg-gradient-to-bl from-secondary/50 via-transparent to-primary/50 shadow-lg">
+											<div className="h-full w-full rounded-2xl bg-card/90 backdrop-blur-md p-6 sm:p-8 flex flex-col justify-between">
+												{/* Review Content */}
+												<div className="flex-1 overflow-y-auto custom-scrollbar">
+													<div className="flex gap-1 mb-4">
+														{[...Array(review.rating)].map((_, i) => (
+															<Star
+																key={i}
+																className="h-5 w-5 fill-secondary text-secondary"
+															/>
+														))}
+													</div>
 
-											<p
-												className="
-        text-xs sm:text-sm
-        italic leading-relaxed
-        text-muted-foreground
-        line-clamp-6 sm:line-clamp-none
-      "
-											>
-												{highlightText(review.review, review.highlights)}
-											</p>
-										</div>
-
-										{/* Footer */}
-										<div
-											className="
-      mt-4
-      flex items-center gap-3
-      border-t pt-3 sm:pt-4
-    "
-										>
-											<div
-												className="
-        flex items-center justify-center
-        h-9 w-9 sm:h-10 sm:w-10
-        rounded-full bg-primary/10
-      "
-											>
-												<span className="text-xs sm:text-sm font-semibold text-primary">
-													{review.initials}
-												</span>
-											</div>
-
-											<div className="min-w-0">
-												<div className="text-sm font-semibold truncate">
-													{review.name}
+													<div className="relative">
+														<Quote className="absolute -top-2 -left-2 h-6 w-6 text-primary/20 transform -scale-x-100" />
+														<p className="text-sm leading-relaxed text-muted-foreground pl-4 border-l-2 border-primary/20">
+															{highlightText(review.review, review.highlights)}
+														</p>
+													</div>
 												</div>
-												<div className="text-xs text-muted-foreground truncate">
-													{review.role}
+
+												{/* Footer */}
+												<div className="mt-6 flex items-center gap-3 border-t border-border/50 pt-4">
+													<div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center">
+														<span className="text-xs font-bold text-secondary">{review.initials}</span>
+													</div>
+													<div className="min-w-0">
+														<div className="text-sm font-semibold truncate text-primary">{review.name}</div>
+														<div className="text-xs text-secondary truncate">{review.role}</div>
+													</div>
 												</div>
 											</div>
 										</div>
-									</Card>
+									</div>
 
 								</div>
 							</div>
@@ -258,12 +218,16 @@ export default function ReviewsPage() {
 			</section>
 
 			{/* Stats Section */}
-			<section className="relative overflow-hidden bg-muted/30 px-6 py-24 lg:px-8">
+			<section className="relative overflow-hidden px-6 py-24 lg:px-8">
+				{/* Background decoration */}
+				<div className="absolute inset-0 bg-muted/20 -z-10" />
+				<div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+
 				<div className="relative mx-auto max-w-7xl">
-					<div className="text-center">
-						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-							Trusted <span style={{ color: primaryColor }}>by Clients</span>{" "}
-							<span style={{ color: secondaryColor }}>Worldwide</span>
+					<div className="text-center mb-16">
+						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
+							Trusted <span className="text-primary">by Clients</span>{" "}
+							<span className="text-secondary">Worldwide</span>
 						</h2>
 						<p className="mt-4 text-lg text-muted-foreground">
 							Our commitment to excellence shows in the numbers
@@ -271,20 +235,22 @@ export default function ReviewsPage() {
 					</div>
 
 					{/* UPDATED GRID */}
-					<div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 						{/* Card 1 */}
 						{(() => {
 							const { count, ref } = useCounter(95)
 							return (
-								<Card
-									ref={ref}
-									className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
-								>
-									<div className="text-4xl font-bold text-foreground">{count}%</div>
-									<div className="mt-2 text-sm text-muted-foreground">
-										Client Satisfaction Rate
-									</div>
-								</Card>
+								<div className="p-[1px] rounded-2xl bg-gradient-to-br from-primary/30 to-transparent hover:from-primary/50 transition-colors duration-500">
+									<Card
+										ref={ref}
+										className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
+									>
+										<div className="text-4xl font-bold text-foreground mb-2">{count}%</div>
+										<div className="text-sm font-medium text-muted-foreground">
+											Client Satisfaction Rate
+										</div>
+									</Card>
+								</div>
 							)
 						})()}
 
@@ -292,15 +258,17 @@ export default function ReviewsPage() {
 						{(() => {
 							const { count, ref } = useCounter(150)
 							return (
-								<Card
-									ref={ref}
-									className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
-								>
-									<div className="text-4xl font-bold text-foreground">{count}+</div>
-									<div className="mt-2 text-sm text-muted-foreground">
-										Successful Projects
-									</div>
-								</Card>
+								<div className="p-[1px] rounded-2xl bg-gradient-to-br from-secondary/30 to-transparent hover:from-secondary/50 transition-colors duration-500">
+									<Card
+										ref={ref}
+										className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
+									>
+										<div className="text-4xl font-bold text-foreground mb-2">{count}+</div>
+										<div className="text-sm font-medium text-muted-foreground">
+											Successful Projects
+										</div>
+									</Card>
+								</div>
 							)
 						})()}
 
@@ -308,42 +276,44 @@ export default function ReviewsPage() {
 						{(() => {
 							const { count, ref } = useCounter(49)
 							return (
-								<Card
-									ref={ref}
-									className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
-								>
-									<div className="text-4xl font-bold text-foreground">
-										{(count / 10).toFixed(1)}/5
-									</div>
-									<div className="mt-2 text-sm text-muted-foreground">
-										Average Rating
-									</div>
-								</Card>
+								<div className="p-[1px] rounded-2xl bg-gradient-to-br from-primary/30 to-transparent hover:from-primary/50 transition-colors duration-500">
+									<Card
+										ref={ref}
+										className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
+									>
+										<div className="text-4xl font-bold text-foreground mb-2">
+											{(count / 10).toFixed(1)}/5
+										</div>
+										<div className="text-sm font-medium text-muted-foreground">
+											Average Rating
+										</div>
+									</Card>
+								</div>
 							)
 						})()}
 
-						{/* ✅ NEW CARD — LINES OF CODE */}
+						{/* Card 4 */}
 						{(() => {
 							const { count, ref } = useCounter(12135)
 							return (
-								<Card
-									ref={ref}
-									className="rounded-xl border border-border bg-card/90 p-8 text-center backdrop-blur"
-								>
-									<div className="text-4xl font-bold text-foreground">
-										{count.toLocaleString()}+
-									</div>
-									<div className="mt-2 text-sm text-muted-foreground">
-										Lines of Code Written
-									</div>
-								</Card>
+								<div className="p-[1px] rounded-2xl bg-gradient-to-br from-secondary/30 to-transparent hover:from-secondary/50 transition-colors duration-500">
+									<Card
+										ref={ref}
+										className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
+									>
+										<div className="text-4xl font-bold text-foreground mb-2">
+											{count.toLocaleString()}+
+										</div>
+										<div className="text-sm font-medium text-muted-foreground">
+											Lines of Code Written
+										</div>
+									</Card>
+								</div>
 							)
 						})()}
 					</div>
 				</div>
 			</section>
-
-
 			<Footer />
 		</div>
 	)
