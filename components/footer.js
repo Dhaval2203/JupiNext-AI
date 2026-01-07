@@ -159,7 +159,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-16 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
+				<div className="mt-6 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
 					© 2026 <span className="text-primary font-semibold">JupiNext</span> – <span className="text-secondary">Where the Next Begins</span>
 				</div>
 			</div>
