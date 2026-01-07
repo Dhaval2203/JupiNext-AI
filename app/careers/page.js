@@ -269,21 +269,21 @@ export default function CareersPage() {
 									</div>
 
 									{/* Right: Apply Section */}
-									<div className="flex flex-col justify-between lg:w-64 border-l border-border/50 pl-6">
+									<div className="flex flex-col justify-between lg:w-72 bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
 										{/* Top Content */}
 										<div>
-											<h4 className="text-lg font-semibold text-foreground">Expected Joining</h4>
+											<h4 className="text-lg font-bold text-primary mb-4">Expected Joining</h4>
 											<p className="mt-1 text-sm text-muted-foreground">ASAP or as per notice period</p>
 
 											<div className="mt-6 text-sm text-muted-foreground space-y-2">
 												<p>
-													<span className="font-semibold">Recruiter:</span> hr@jupinext.com
+													<span className="font-semibold text-secondary">Recruiter:</span> hr@jupinext.com
 												</p>
 												<p>
-													<span className="font-semibold">Process:</span> Resume Screening → HR Interview → Technical Interview → Manager Round → Offer → Onboarding
+													<span className="font-semibold text-secondary">Process:</span> Resume Screening → HR Interview → Technical Interview → Manager Round → Offer → Onboarding
 												</p>
 												<p>
-													<span className="font-semibold">Location:</span> Remote
+													<span className="font-semibold text-secondary">Location:</span> Remote
 												</p>
 											</div>
 										</div>
