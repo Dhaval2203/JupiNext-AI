@@ -19,6 +19,7 @@ export const metadata = {
     "blockchain",
     "AI",
   ],
+  metadataBase: new URL('https://jupinext.com'),
   icons: {
     icon: [
       {
@@ -45,6 +46,24 @@ export const viewport = {
 }
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'JupiNext',
+    url: 'https://jupinext.com',
+    logo: 'https://jupinext.com/Logo.png',
+    sameAs: [
+      'https://twitter.com/jupinext',
+      'https://linkedin.com/company/jupinext',
+      'https://github.com/jupinext'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'hello@jupinext.com',
+      contactType: 'customer support'
+    }
+  }
+
   return (
     <html lang="en">
       <head>
@@ -52,6 +71,10 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         {/* <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={`${inter.className} font-sans antialiased`}>
         {children}

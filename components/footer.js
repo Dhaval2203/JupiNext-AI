@@ -12,7 +12,7 @@ export default function Footer() {
 
 					{/* Brand Column */}
 					<div className="space-y-6">
-						<Link href="/" className="inline-flex items-center gap-2 group">
+						<div className="inline-flex items-center gap-2 group">
 							<div className="flex items-center">
 								<Link href="/" className="flex items-center">
 									<span style={{ marginLeft: '-5%' }}>
@@ -27,7 +27,7 @@ export default function Footer() {
 								</Link>
 							</div>
 
-						</Link>
+						</div>
 						<p className="text-primary text-muted-foreground leading-relaxed">
 							Where the Next Begins. delivering innovative IT solutions in web, mobile, cloud, and AI technology to propel your business forward.
 						</p>

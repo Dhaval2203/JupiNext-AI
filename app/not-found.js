@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import {
     primaryBackgroundColor,
@@ -8,6 +6,18 @@ import {
     whiteColor,
     accentColor,
 } from '../lib/colors';
+
+export const metadata = {
+    title: "Page Not Found | JupiNext",
+    description: "The page you looking for surely not here.",
+    keywords:
+        "software development process, agile workflow, requirement analysis, planning, design, development, testing, deployment, maintenance, JupiNext",
+    openGraph: {
+        title: "JupiNext Software Development Process",
+        description: "A transparent, structured, and efficient workflow for delivering high-quality software solutions",
+        type: "website",
+    },
+}
 
 export default function NotFound() {
     return (

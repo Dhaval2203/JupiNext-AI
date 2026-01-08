@@ -5,6 +5,20 @@ import { Card } from "@/components/ui/card"
 import { MapPin, Clock, Briefcase, ArrowRight, Mail, DollarSign } from "lucide-react"
 import { primaryColor, accentColor, secondaryColor } from "@/lib/colors"
 
+export const metadata = {
+	title: "Careers at JupiNext | Join Our Team",
+	description:
+		"Explore exciting career opportunities at JupiNext. Join our team of innovators and contribute to building modern web, cloud, and blockchain solutions.",
+	keywords:
+		"JupiNext careers, job openings, software developer jobs, UI/UX designer jobs, DevOps engineer, project manager, technology jobs, remote jobs",
+	openGraph: {
+		title: "Careers at JupiNext - Join Our Team",
+		description:
+			"Discover open positions at JupiNext and build your career with a company that values innovation, growth, and collaboration.",
+		type: "website",
+	},
+}
+
 export default function CareersPage() {
 	const jobOpenings = [
 		{
@@ -105,15 +119,56 @@ export default function CareersPage() {
 		},
 	]
 
+	// Generate JSON-LD for Job Postings
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'ItemList',
+		itemListElement: jobOpenings.map((job, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			item: {
+				'@type': 'JobPosting',
+				title: job.title,
+				description: job.description,
+				datePosted: new Date().toISOString().split('T')[0], // Assuming posted today for dynamic freshness
+				validThrough: new Date(new Date().setMonth(new Date().getMonth() + 1)).toISOString().split('T')[0],
+				employmentType: job.type === 'Full-time' ? 'FULL_TIME' : 'PART_TIME',
+				hiringOrganization: {
+					'@type': 'Organization',
+					name: 'JupiNext',
+					sameAs: 'https://jupinext.com'
+				},
+				jobLocation: {
+					'@type': 'Place',
+					address: {
+						'@type': 'PostalAddress',
+						addressCountry: 'Remote' // Or specific country code if known
+					}
+				},
+				applicantLocationRequirements: {
+					'@type': 'Country',
+					name: 'Remote'
+				},
+				baseSalary: {
+					'@type': 'MonetaryAmount',
+					currency: 'USD',
+					value: {
+						'@type': 'QuantitativeValue',
+						value: 100000, // Placeholder or range
+						unitText: 'YEAR'
+					}
+				}
+			}
+		}))
+	}
+
 	return (
 		<div className="min-h-screen">
-			<head>
-				<title>Careers at JupiNext | Join Our Team</title>
-				<meta name="description" content="Explore exciting career opportunities at JupiNext. Join our team of innovators and contribute to building modern web, cloud, and blockchain solutions." />
-				<meta name="keywords" content="JupiNext careers, job openings, software developer jobs, UI/UX designer jobs, DevOps engineer, project manager, technology jobs, remote jobs" />
-				<meta property="og:title" content="Careers at JupiNext - Join Our Team" />
-				<meta property="og:description" content="Discover open positions at JupiNext and build your career with a company that values innovation, growth, and collaboration." />
-			</head>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
+
 			<Header />
 
 			{/* Hero Section */}
