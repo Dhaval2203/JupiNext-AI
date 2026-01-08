@@ -38,17 +38,19 @@ export default function Footer() {
 						<h3 className="text-lg text-primary font-bold mb-6 group-hover:translate-x-1 transition-transform">Solutions</h3>
 						<ul className="space-y-3">
 							{[
-								{ label: "Web Development", href: "/services/web-development" },
-								{ label: "Mobile Applications", href: "/services/mobile-apps" },
-								{ label: "Cloud Infrastructure", href: "/services/cloud" },
-								{ label: "AI & Machine Learning", href: "/services/ai-ml" },
-								{ label: "Blockchain Solutions", href: "/services/blockchain" },
-								{ label: "UI/UX Design", href: "/services/design" },
+								{ label: "Web Development" },
+								{ label: "Mobile Applications" },
+								{ label: "Cloud Infrastructure" },
+								{ label: "AI & Machine Learning" },
+								{ label: "Blockchain Solutions" },
+								{ label: "UI/UX Design" },
 							].map((item) => (
 								<li key={item.label}>
-									<span className="text-muted-foreground hover:text-secondary transition-all duration-200 flex items-center gap-2 group/link">
-										<span className="h-px w-0 bg-secondary group-hover/link:w-3 transition-all duration-300" />
-										{item.label}
+									<span
+										className="text-muted-foreground hover:text-secondary transition-all duration-200 flex items-center gap-2 group/link"
+									>
+										<ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 text-secondary" />
+										<span className="group-hover/link:translate-x-1 transition-transform duration-300">{item.label}</span>
 									</span>
 								</li>
 							))}
@@ -74,8 +76,8 @@ export default function Footer() {
 										href={item.href}
 										className="text-muted-foreground hover:text-primary transition-all duration-200 flex items-center gap-2 group/link"
 									>
-										<span className="h-px w-0 bg-primary group-hover/link:w-3 transition-all duration-300" />
-										{item.label}
+										<ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300 text-primary" />
+										<span className="group-hover/link:translate-x-1 transition-transform duration-300">{item.label}</span>
 									</Link>
 								</li>
 							))}
