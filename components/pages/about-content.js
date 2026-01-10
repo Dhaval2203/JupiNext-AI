@@ -1,8 +1,61 @@
+"use client"
+
+import { useState } from "react"
 import { Card } from "@/components/ui/card"
-import { Target, Eye, Lightbulb, Users, Heart, Rocket, TrendingUp, CheckCircle } from "lucide-react"
+import { Target, Eye, Lightbulb, Users, Heart, Rocket, TrendingUp, CheckCircle, ChevronDown, Plus, Minus } from "lucide-react"
 import { primaryColor, secondaryColor } from "@/lib/colors"
+import { cn } from "@/lib/utils"
+
+const faqs = [
+	{
+		question: "What services does JupiNext provide?",
+		answer: "JupiNext offers a comprehensive suite of IT solutions including Web Development, Mobile App Development, Cloud Services, UI/UX Design, Blockchain Development, and AI-Powered Solutions. We build scalable and innovative technologies tailored to your business needs."
+	},
+	{
+		question: "How does JupiNext ensure project quality?",
+		answer: "We follow strict Agile methodologies and rigorous testing protocols. Our commitment to 'Excellence' means we don't just deliver code; we deliver performant, secure, and user-friendly solutions that drive real value."
+	},
+	{
+		question: "Can you handle enterprise-level projects?",
+		answer: "Absolutely. As recognized 'Enterprise Leaders', we have successfully delivered over 150+ projects globally, ranging from startups to large-scale enterprise systems. Our team is equipped to handle complex architectural challenges."
+	},
+	{
+		question: "Do you offer post-launch support and maintenance?",
+		answer: "Yes, we believe in long-term partnerships. We offer dedicated support and maintenance packages to ensure your application remains up-to-date, secure, and performs optimally as your business grows."
+	},
+	{
+		question: "How do we get started with a project?",
+		answer: "Simply reach out to us through our contact page or email. We'll schedule an initial consultation to understand your vision and requirements, then provide a tailored proposal to bring your idea to life."
+	},
+	{
+		question: "What technologies do you specialize in?",
+		answer: "We specialize in modern tech stacks including React, Next.js, Node.js, Python, Flutter, React Native, AWS, Azure, Solidity, and cutting-edge AI/ML frameworks. Our team stays current with the latest technologies to deliver future-proof solutions."
+	},
+	{
+		question: "What is your typical project timeline?",
+		answer: "Project timelines vary based on scope and complexity. A simple web application might take 4-8 weeks, while enterprise solutions can span 3-6 months or more. We provide detailed timelines during the proposal phase and maintain transparent communication throughout."
+	},
+	{
+		question: "Do you work with startups or only established businesses?",
+		answer: "We work with businesses of all sizes! From ambitious startups needing MVP development to established enterprises requiring digital transformation, we tailor our approach to meet your specific needs and budget."
+	},
+	{
+		question: "How do you handle project communication and updates?",
+		answer: "We believe in transparent, regular communication. You'll have access to project management tools, scheduled sprint reviews, and a dedicated project manager. We provide weekly progress reports and are always available for quick syncs when needed."
+	},
+	{
+		question: "What makes JupiNext different from other IT companies?",
+		answer: "Our unique blend of innovation, client-centric approach, and proven expertise sets us apart. We don't just build software—we become your technology partner, invested in your long-term success. Our track record of 150+ successful projects speaks to our commitment to excellence."
+	}
+]
 
 export default function AboutContent() {
+	const [openIndex, setOpenIndex] = useState(null)
+
+	const toggleFaq = (index) => {
+		setOpenIndex(openIndex === index ? null : index)
+	}
+
 	return (
 		<>
 			{/* Hero Section */}
@@ -185,6 +238,126 @@ export default function AboutContent() {
 								</p>
 							</Card>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* FAQ Section */}
+			<section className="bg-muted/20 px-6 py-24 lg:px-8">
+				<div className="mx-auto max-w-6xl">
+					<div className="text-center mb-16">
+						<div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-card border border-border">
+							<div className="h-2 w-2 rounded-full" style={{ backgroundColor: primaryColor }}></div>
+							<span className="text-sm font-semibold tracking-wider uppercase text-muted-foreground">
+								Got Questions?
+							</span>
+							<div className="h-2 w-2 rounded-full" style={{ backgroundColor: secondaryColor }}></div>
+						</div>
+						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+							Frequently Asked <span style={{ color: primaryColor }}>Questions</span> (FAQs)
+						</h2>
+						<p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+							Everything you need to know about our services, process, and approach
+						</p>
+					</div>
+
+					<div className="grid grid-cols-1 gap-6">
+						{faqs.map((faq, index) => {
+							const isEven = index % 2 === 0
+							const accentColor = isEven ? primaryColor : secondaryColor
+
+							return (
+								<Card
+									key={index}
+									className={cn(
+										"group relative overflow-hidden border-2 transition-all duration-300 cursor-pointer",
+										openIndex === index
+											? "shadow-2xl border-transparent"
+											: "border-border hover:shadow-lg hover:border-border/50"
+									)}
+									onClick={() => toggleFaq(index)}
+								>
+									{/* Solid color accent bar */}
+									<div
+										className={cn(
+											"absolute left-0 top-0 bottom-0 w-1.5 transition-all duration-300",
+											openIndex === index ? "w-2" : "w-1"
+										)}
+										style={{ backgroundColor: accentColor }}
+									/>
+
+									{/* Corner decoration */}
+									<div
+										className={cn(
+											"absolute top-0 right-0 w-20 h-20 -mr-10 -mt-10 rounded-full opacity-10 transition-opacity duration-300",
+											openIndex === index ? "opacity-20" : "opacity-5"
+										)}
+										style={{ backgroundColor: accentColor }}
+									/>
+
+									<div className="relative pl-6 pr-4 py-4">
+										<div className="flex items-start justify-between gap-4">
+											<div className="flex items-start gap-3 flex-1">
+												{/* Large subtle number on the left */}
+												<div
+													className="text-3xl sm:text-4xl font-bold pointer-events-none transition-colors duration-300"
+													style={{ color: openIndex === index ? accentColor : `${accentColor}40` }}
+												>
+													{index + 1}
+												</div>
+												<h3
+													className="text-base font-bold transition-colors duration-300 leading-snug pr-8 sm:pr-12"
+													style={{ color: accentColor }}
+												>
+													{faq.question}
+												</h3>
+											</div>
+
+											{/* Toggle button */}
+											<div
+												className={cn(
+													"flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all duration-300 shadow-sm",
+													openIndex === index
+														? "shadow-md"
+														: "group-hover:shadow-md"
+												)}
+												style={{
+													backgroundColor: openIndex === index ? accentColor : `${accentColor}20`,
+													color: openIndex === index ? 'white' : accentColor
+												}}
+											>
+												{openIndex === index ? (
+													<Minus className="h-4 w-4" />
+												) : (
+													<Plus className="h-4 w-4" />
+												)}
+											</div>
+										</div>
+
+										{/* Answer section */}
+										<div
+											className={cn(
+												"grid transition-all duration-500 ease-in-out",
+												openIndex === index ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"
+											)}
+										>
+											<div className="overflow-hidden">
+												<div className="pl-8 sm:pl-11 pr-2 pb-2">
+													<div
+														className="p-4 rounded-lg bg-muted/50 border-l-4"
+														style={{ borderColor: accentColor }}
+													>
+														<p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+															{faq.answer}
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</Card>
+							)
+						})}
 					</div>
 				</div>
 			</section>
