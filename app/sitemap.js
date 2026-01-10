@@ -4,7 +4,7 @@ export default function sitemap() {
     // Define all static routes with SEO priorities
     const routes = [
         {
-            url: '',
+            url: '/',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1.0,
