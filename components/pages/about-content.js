@@ -117,7 +117,7 @@ export default function AboutContent() {
 							<div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4">
 								<Lightbulb className="h-8 w-8 text-primary" />
 							</div>
-							<h3 className="text-xl font-semibold text-card-foreground">Innovation</h3>
+							<h3 className="text-xl font-semibold text-primary">Innovation</h3>
 							<p className="mt-3 text-sm text-muted-foreground">
 								Constantly pushing boundaries and embracing new technologies to deliver groundbreaking solutions.
 							</p>
@@ -127,7 +127,7 @@ export default function AboutContent() {
 							<div className="mx-auto mb-4 inline-flex rounded-full bg-secondary/10 p-4">
 								<Heart className="h-8 w-8 text-secondary" />
 							</div>
-							<h3 className="text-xl font-semibold text-card-foreground">Client-Centric</h3>
+							<h3 className="text-xl font-semibold text-secondary">Client-Centric</h3>
 							<p className="mt-3 text-sm text-muted-foreground">
 								Your success is our success. We prioritize understanding and exceeding client expectations.
 							</p>
@@ -137,7 +137,7 @@ export default function AboutContent() {
 							<div className="mx-auto mb-4 inline-flex rounded-full bg-accent/10 p-4">
 								<CheckCircle className="h-8 w-8 text-accent" />
 							</div>
-							<h3 className="text-xl font-semibold text-card-foreground">Excellence</h3>
+							<h3 className="text-xl font-semibold text-accent">Excellence</h3>
 							<p className="mt-3 text-sm text-muted-foreground">
 								Committed to delivering the highest quality in every project, no matter the size or complexity.
 							</p>
@@ -147,7 +147,7 @@ export default function AboutContent() {
 							<div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4">
 								<Users className="h-8 w-8 text-primary" />
 							</div>
-							<h3 className="text-xl font-semibold text-card-foreground">Collaboration</h3>
+							<h3 className="text-xl font-semibold text-primary">Collaboration</h3>
 							<p className="mt-3 text-sm text-muted-foreground">
 								Working together as a team and with our clients to achieve shared goals and mutual success.
 							</p>
@@ -157,7 +157,7 @@ export default function AboutContent() {
 							<div className="mx-auto mb-4 inline-flex rounded-full bg-secondary/10 p-4">
 								<TrendingUp className="h-8 w-8 text-secondary" />
 							</div>
-							<h3 className="text-xl font-semibold text-card-foreground">Growth</h3>
+							<h3 className="text-xl font-semibold text-secondary">Growth</h3>
 							<p className="mt-3 text-sm text-muted-foreground">
 								Continuously learning and evolving to stay ahead of industry trends and client needs.
 							</p>
@@ -167,7 +167,7 @@ export default function AboutContent() {
 							<div className="mx-auto mb-4 inline-flex rounded-full bg-accent/10 p-4">
 								<Rocket className="h-8 w-8 text-accent" />
 							</div>
-							<h3 className="text-xl font-semibold text-card-foreground">Agility</h3>
+							<h3 className="text-xl font-semibold text-accent">Agility</h3>
 							<p className="mt-3 text-sm text-muted-foreground">
 								Adapting quickly to changes and challenges while maintaining focus on delivering results.
 							</p>
@@ -192,7 +192,7 @@ export default function AboutContent() {
 							<Card className="rounded-xl border border-border bg-card p-6">
 								<div className="flex items-center gap-3">
 									{/* <span className="text-2xl font-bold text-primary">2016</span> */}
-									<h3 className="text-xl font-semibold text-card-foreground">Foundation</h3>
+									<h3 className="text-xl font-semibold text-primary">Foundation</h3>
 								</div>
 								<p className="mt-2 text-muted-foreground">
 									JupiNext was founded with a vision to revolutionize IT solutions for businesses of all sizes.
@@ -205,7 +205,7 @@ export default function AboutContent() {
 							<Card className="rounded-xl border border-border bg-card p-6">
 								<div className="flex items-center gap-3">
 									{/* <span className="text-2xl font-bold text-accent">2018</span> */}
-									<h3 className="text-xl font-semibold text-card-foreground">Expansion</h3>
+									<h3 className="text-xl font-semibold text-accent">Expansion</h3>
 								</div>
 								<p className="mt-2 text-muted-foreground">
 									Expanded our services to include cloud solutions and mobile development, serving 50+ clients.
@@ -218,7 +218,7 @@ export default function AboutContent() {
 							<Card className="rounded-xl border border-border bg-card p-6">
 								<div className="flex items-center gap-3">
 									{/* <span className="text-2xl font-bold text-secondary">2021</span> */}
-									<h3 className="text-xl font-semibold text-card-foreground">Innovation Hub</h3>
+									<h3 className="text-xl font-semibold text-secondary">Innovation Hub</h3>
 								</div>
 								<p className="mt-2 text-muted-foreground">
 									Launched our AI and blockchain divisions, positioning ourselves at the forefront of emerging tech.
@@ -231,7 +231,7 @@ export default function AboutContent() {
 							<Card className="rounded-xl border border-border bg-card p-6">
 								<div className="flex items-center gap-3">
 									{/* <span className="text-2xl font-bold text-primary">2024</span> */}
-									<h3 className="text-xl font-semibold text-card-foreground">Enterprise Leader</h3>
+									<h3 className="text-xl font-semibold text-primary">Enterprise Leader</h3>
 								</div>
 								<p className="mt-2 text-muted-foreground">
 									Recognized as a leading enterprise solution provider with 150+ successful projects delivered globally.

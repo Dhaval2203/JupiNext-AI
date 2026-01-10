@@ -37,8 +37,8 @@ export default function ServicesPage() {
             title: "Mobile Development",
             description: "Native and cross-platform mobile apps for iOS and Android. Seamless performance with intuitive user experiences.",
             icon: Smartphone,
-            colorClass: "text-accent",
-            bgClass: "bg-accent/10",
+            colorClass: "text-secondary",
+            bgClass: "bg-secondary/10",
             features: [
                 "React Native Apps",
                 "Flutter Development",
@@ -49,8 +49,8 @@ export default function ServicesPage() {
             title: "Cloud & DevOps",
             description: "Scalable cloud infrastructure and DevOps practices. AWS, Azure, and Google Cloud deployment and management.",
             icon: Cloud,
-            colorClass: "text-primary",
-            bgClass: "bg-primary/10",
+            colorClass: "text-accent",
+            bgClass: "bg-accent/10",
             features: [
                 "Cloud Migration Services",
                 "CI/CD Pipeline Setup",
@@ -61,8 +61,8 @@ export default function ServicesPage() {
             title: "UI/UX Design",
             description: "Beautiful, intuitive interfaces that prioritize user experience. From wireframes to high-fidelity prototypes.",
             icon: Palette,
-            colorClass: "text-secondary",
-            bgClass: "bg-secondary/10",
+            colorClass: "text-primary",
+            bgClass: "bg-primary/10",
             features: [
                 "User Research & Testing",
                 "Responsive Design Systems",
@@ -73,8 +73,8 @@ export default function ServicesPage() {
             title: "Blockchain",
             description: "Decentralized solutions leveraging blockchain technology. Smart contracts, DApps, and Web3 integration.",
             icon: Shield,
-            colorClass: "text-accent",
-            bgClass: "bg-accent/10",
+            colorClass: "text-secondary",
+            bgClass: "bg-secondary/10",
             features: [
                 "Smart Contract Development",
                 "DApp Development",
@@ -85,8 +85,8 @@ export default function ServicesPage() {
             title: "AI Automation",
             description: "Intelligent automation powered by AI and machine learning. Streamline operations and enhance decision-making.",
             icon: Zap,
-            colorClass: "text-primary",
-            bgClass: "bg-primary/10",
+            colorClass: "text-accent",
+            bgClass: "bg-accent/10",
             features: [
                 "Machine Learning Models",
                 "Natural Language Processing",
@@ -97,8 +97,8 @@ export default function ServicesPage() {
             title: "Enterprise Software",
             description: "Custom enterprise solutions tailored to your business needs. CRM, ERP, and workflow automation systems.",
             icon: Settings,
-            colorClass: "text-secondary",
-            bgClass: "bg-secondary/10",
+            colorClass: "text-primary",
+            bgClass: "bg-primary/10",
             features: [
                 "Custom CRM Systems",
                 "Business Process Automation",
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                                     <div className={`mb-6 inline-flex rounded-xl p-4 ${service.bgClass}`}>
                                         <service.icon className={`h-10 w-10 ${service.colorClass}`} />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-card-foreground">{service.title}</h3>
+                                    <h3 className={`text-2xl font-bold ${service.colorClass}`}>{service.title}</h3>
                                     <p className="mt-4 text-muted-foreground leading-relaxed">
                                         {service.description}
                                     </p>
