@@ -47,13 +47,13 @@ export default function SolutionsPage() {
 								<div className="mb-6 inline-flex rounded-xl bg-primary/10 p-4">
 									<DollarSign className="h-10 w-10 text-primary" />
 								</div>
-								<h3 className="text-2xl font-bold text-card-foreground">FinTech</h3>
+								<h3 className="text-2xl font-bold text-primary">FinTech</h3>
 								<p className="mt-4 text-muted-foreground leading-relaxed">
 									Build secure, scalable financial technology solutions. Payment gateways, banking apps, and investment
 									platforms with enterprise-grade security.
 								</p>
 								<div className="mt-6">
-									<h4 className="text-sm font-semibold text-foreground">Key Solutions:</h4>
+									<h4 className="text-sm font-semibold text-primary">Key Solutions:</h4>
 									<ul className="mt-3 space-y-2 text-sm text-muted-foreground">
 										<li>• Digital Banking Platforms</li>
 										<li>• Payment Processing Systems</li>
@@ -70,13 +70,13 @@ export default function SolutionsPage() {
 								<div className="mb-6 inline-flex rounded-xl bg-secondary/10 p-4">
 									<HeartPulse className="h-10 w-10 text-secondary" />
 								</div>
-								<h3 className="text-2xl font-bold text-card-foreground">HealthTech</h3>
+								<h3 className="text-2xl font-bold text-secondary">HealthTech</h3>
 								<p className="mt-4 text-muted-foreground leading-relaxed">
 									Innovative healthcare solutions that improve patient care. Telemedicine, health records management,
 									and medical IoT applications.
 								</p>
 								<div className="mt-6">
-									<h4 className="text-sm font-semibold text-foreground">Key Solutions:</h4>
+									<h4 className="text-sm font-semibold text-secondary">Key Solutions:</h4>
 									<ul className="mt-3 space-y-2 text-sm text-muted-foreground">
 										<li>• Telemedicine Platforms</li>
 										<li>• Electronic Health Records</li>
@@ -93,13 +93,13 @@ export default function SolutionsPage() {
 								<div className="mb-6 inline-flex rounded-xl bg-accent/10 p-4">
 									<ShoppingCart className="h-10 w-10 text-accent" />
 								</div>
-								<h3 className="text-2xl font-bold text-card-foreground">E-Commerce</h3>
+								<h3 className="text-2xl font-bold text-accent">E-Commerce</h3>
 								<p className="mt-4 text-muted-foreground leading-relaxed">
 									Complete e-commerce solutions from storefront to fulfillment. Multi-channel selling, inventory
 									management, and customer insights.
 								</p>
 								<div className="mt-6">
-									<h4 className="text-sm font-semibold text-foreground">Key Solutions:</h4>
+									<h4 className="text-sm font-semibold text-accent">Key Solutions:</h4>
 									<ul className="mt-3 space-y-2 text-sm text-muted-foreground">
 										<li>• Custom Online Stores</li>
 										<li>• Marketplace Platforms</li>
@@ -116,13 +116,13 @@ export default function SolutionsPage() {
 								<div className="mb-6 inline-flex rounded-xl bg-primary/10 p-4">
 									<Layers className="h-10 w-10 text-primary" />
 								</div>
-								<h3 className="text-2xl font-bold text-card-foreground">SaaS</h3>
+								<h3 className="text-2xl font-bold text-primary">SaaS</h3>
 								<p className="mt-4 text-muted-foreground leading-relaxed">
 									Build and scale your software-as-a-service product. Multi-tenant architecture, subscription billing,
 									and analytics dashboards.
 								</p>
 								<div className="mt-6">
-									<h4 className="text-sm font-semibold text-foreground">Key Solutions:</h4>
+									<h4 className="text-sm font-semibold text-primary">Key Solutions:</h4>
 									<ul className="mt-3 space-y-2 text-sm text-muted-foreground">
 										<li>• Multi-Tenant Platforms</li>
 										<li>• Subscription Management</li>
@@ -136,16 +136,16 @@ export default function SolutionsPage() {
 						{/* EdTech */}
 						<Card className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-xl hover:-translate-y-1">
 							<div className="p-8">
-								<div className="mb-6 inline-flex rounded-xl bg-accent/10 p-4">
-									<GraduationCap className="h-10 w-10 text-accent" />
+								<div className="mb-6 inline-flex rounded-xl bg-secondary/10 p-4">
+									<GraduationCap className="h-10 w-10 text-secondary" />
 								</div>
-								<h3 className="text-2xl font-bold text-card-foreground">EdTech</h3>
+								<h3 className="text-2xl font-bold text-secondary">EdTech</h3>
 								<p className="mt-4 text-muted-foreground leading-relaxed">
 									Transform education with technology. Learning management systems, virtual classrooms, and student
 									engagement platforms.
 								</p>
 								<div className="mt-6">
-									<h4 className="text-sm font-semibold text-foreground">Key Solutions:</h4>
+									<h4 className="text-sm font-semibold text-secondary">Key Solutions:</h4>
 									<ul className="mt-3 space-y-2 text-sm text-muted-foreground">
 										<li>• Learning Management Systems</li>
 										<li>• Virtual Classroom Software</li>
@@ -159,16 +159,16 @@ export default function SolutionsPage() {
 						{/* Enterprise */}
 						<Card className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-xl hover:-translate-y-1">
 							<div className="p-8">
-								<div className="mb-6 inline-flex rounded-xl bg-secondary/10 p-4">
-									<Building2 className="h-10 w-10 text-secondary" />
+								<div className="mb-6 inline-flex rounded-xl bg-accent/10 p-4">
+									<Building2 className="h-10 w-10 text-accent" />
 								</div>
-								<h3 className="text-2xl font-bold text-card-foreground">Enterprise</h3>
+								<h3 className="text-2xl font-bold text-accent">Enterprise</h3>
 								<p className="mt-4 text-muted-foreground leading-relaxed">
 									Large-scale enterprise solutions for complex business needs. CRM, ERP, and workflow automation at
 									scale.
 								</p>
 								<div className="mt-6">
-									<h4 className="text-sm font-semibold text-foreground">Key Solutions:</h4>
+									<h4 className="text-sm font-semibold text-accent">Key Solutions:</h4>
 									<ul className="mt-3 space-y-2 text-sm text-muted-foreground">
 										<li>• Enterprise Resource Planning</li>
 										<li>• Customer Relationship Management</li>
