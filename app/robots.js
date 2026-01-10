@@ -5,6 +5,6 @@ export default function robots() {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://jupinext.com/sitemap.xml',
+        sitemap: 'https://www.jupinext.com/sitemap.xml',
     }
 }
