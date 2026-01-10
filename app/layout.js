@@ -5,7 +5,9 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
     metadataBase: new URL('https://www.jupinext.com'),
-
+    verification: {
+        google: 'google-site-verification=gSXHLIPQJ19w6fTc073YVKinbBe1hhwFpa9cDbmh0fY',
+    },
     title: {
         default: 'JupiNext – IT Solutions & Software Development Company',
         template: '%s | JupiNext',
@@ -115,6 +117,7 @@ export default function RootLayout({ children }) {
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
+                <meta name="google-site-verification" content="gSXHLIPQJ19w6fTc073YVKinbBe1hhwFpa9cDbmh0fY" />
             </head>
             <body className={`${inter.className} font-sans antialiased`}>
                 {children}
