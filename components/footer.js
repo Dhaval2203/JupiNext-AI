@@ -112,16 +112,23 @@ export default function Footer() {
 						{/* Follow Us Card */}
 						<div className="bg-gradient-to-br from-secondary/5 to-transparent border border-secondary/10 rounded-2xl p-6 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/5">
 							<h3 className="text-lg text-secondary font-bold mb-6">Follow Us</h3>
+
 							<div className="flex flex-wrap gap-3">
 								{[
-									{ icon: Linkedin, label: "LinkedIn" },
+									{
+										icon: Linkedin,
+										label: "LinkedIn",
+										link: "https://www.linkedin.com/company/jupinext/",
+									},
 									// { icon: Twitter, label: "Twitter" },
 									// { icon: Github, label: "GitHub" },
 									// { icon: Instagram, label: "Instagram" },
 								].map((social) => (
 									<a
 										key={social.label}
-										href="#"
+										href={social.link}
+										target="_blank"
+										rel="noopener noreferrer"
 										className="h-12 w-12 rounded-xl bg-background border border-secondary/20 flex items-center justify-center text-muted-foreground hover:text-secondary hover:border-secondary hover:shadow-md transition-all duration-300 hover:-translate-y-1"
 									>
 										<social.icon className="h-5 w-5" />
@@ -134,7 +141,9 @@ export default function Footer() {
 				</div>
 
 				<div className="mt-6 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-					© 2026 <span className="text-primary font-semibold">JupiNext</span> – <span className="text-secondary">Where the Next Begins</span>
+					© {new Date().getFullYear()}{" "}
+					<span className="text-primary font-semibold">JupiNext</span> –{" "}
+					<span className="text-secondary">Where the Next Begins</span>
 				</div>
 			</div>
 		</footer>
