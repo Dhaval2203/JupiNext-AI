@@ -103,7 +103,7 @@ export default function RootLayout({ children }) {
         ],
         contactPoint: {
             '@type': 'ContactPoint',
-            email: 'hello@jupinext.com',
+            email: 'hr@jupinext.com',
             contactType: 'customer support'
         }
     }

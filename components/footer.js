@@ -99,11 +99,11 @@ export default function Footer() {
 									</span>
 								</li>
 								<li>
-									<a href="mailto:hello@jupinext.com" className="flex items-center gap-3 text-muted-foreground group cursor-pointer hover:text-foreground transition-colors">
+									<a href="mailto:hr@jupinext.com" className="flex items-center gap-3 text-muted-foreground group cursor-pointer hover:text-foreground transition-colors">
 										<div className="p-2 rounded-lg bg-background shadow-sm text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors border border-primary/10">
 											<Mail className="h-4 w-4" />
 										</div>
-										<span className="pt-0.5">hello@jupinext.com</span>
+										<span className="pt-0.5">hr@jupinext.com</span>
 									</a>
 								</li>
 							</ul>
