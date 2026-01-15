@@ -1,7 +1,7 @@
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Card } from "@/components/ui/card"
-import { primaryColor, secondaryColor } from "@/lib/colors"
+import { accentColor, primaryColor, secondaryColor } from "@/lib/colors"
 
 // React Icons
 import { FaAws, FaJava, FaVuejs } from "react-icons/fa"
@@ -72,7 +72,7 @@ const techSections = [
 	{
 		title: "Backend",
 		subtitle: "Powerful server-side technologies",
-		color: primaryColor,
+		color: secondaryColor,
 		bg: "bg-muted/30 px-6 py-16 lg:px-8",
 		items: [
 			{ label: ".NET", icon: SiDotnet, color: "text-primary" },
@@ -87,7 +87,7 @@ const techSections = [
 	{
 		title: "Cloud Infrastructure",
 		subtitle: "Scalable cloud services and deployment",
-		color: primaryColor,
+		color: accentColor,
 		bg: "px-6 py-16 lg:px-8",
 		items: [
 			{ label: "AWS", icon: FaAws, color: "text-secondary" },
@@ -115,7 +115,7 @@ const techSections = [
 	{
 		title: "DevOps CI/CD",
 		subtitle: "Automation and continuous delivery",
-		color: primaryColor,
+		color: secondaryColor,
 		bg: "px-6 py-16 lg:px-8",
 		items: [
 			{ label: "Git", icon: SiGit, color: "text-secondary" },
@@ -129,7 +129,7 @@ const techSections = [
 	{
 		title: "Blockchain Web3",
 		subtitle: "Decentralized technologies",
-		color: primaryColor,
+		color: accentColor,
 		bg: "bg-muted/30 px-6 py-16 lg:px-8",
 		items: [
 			{ label: "Ethereum", icon: SiEthereum, color: "text-accent" },

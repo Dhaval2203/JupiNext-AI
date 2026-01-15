@@ -114,10 +114,10 @@ export default function ContactClient() {
                                                 Email
                                             </h3>
                                             <a
-                                                href="mailto:hello@jupinext.com"
+                                                href="mailto:hr@jupinext.com"
                                                 className="mt-1 text-sm text-muted-foreground hover:text-primary"
                                             >
-                                                hello@jupinext.com
+                                                hr@jupinext.com
                                             </a>
                                         </div>
                                     </div>
