@@ -177,16 +177,16 @@ function DropdownItem({ href, label }) {
 	return (
 		<Link
 			href={href}
-			className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition-all hover:translate-x-1"
+			className="flex items-center gap-3 px-4 py-3 text-sm transition-all hover:translate-x-1"
 			style={{
 				backgroundColor: active ? secondaryBackgroundColor : undefined,
 				color: active ? secondaryColor : undefined,
 			}}
 		>
-			<span
-				className="h-2 w-2 rounded-full"
+			{/* <span
+				className="h-2 w-2"
 				style={{ backgroundColor: active ? secondaryColor : primaryColor }}
-			/>
+			/> */}
 			{label}
 		</Link>
 	)
@@ -216,16 +216,16 @@ function MobileSubLink({ href, label }) {
 	return (
 		<Link
 			href={href}
-			className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition-all"
+			className="flex items-center gap-3 px-4 py-3 text-sm transition-all"
 			style={{
 				backgroundColor: active ? secondaryBackgroundColor : undefined,
 				color: active ? secondaryColor : undefined,
 			}}
 		>
-			<span
-				className="h-2 w-2 rounded-full"
+			{/* <span
+				className="h-2 w-2"
 				style={{ backgroundColor: active ? secondaryColor : primaryColor }}
-			/>
+			/> */}
 			{label}
 		</Link>
 	)
