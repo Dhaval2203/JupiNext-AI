@@ -3,10 +3,9 @@
 import Footer from "@/components/footer"
 import Header from "@/components/header"
 import { Card } from "@/components/ui/card"
-import { primaryColor, secondaryColor } from "@/lib/colors"
 import { Star, Quote } from "lucide-react"
 import { useState } from "react"
-import { useCounter } from '../../lib/useCounter.js'
+import { useCounter } from "../../lib/useCounter.js"
 
 export default function ReviewsClient() {
     const [flippedCards, setFlippedCards] = useState({})
@@ -17,8 +16,8 @@ export default function ReviewsClient() {
             role: "Chief Technology Officer",
             rating: 5,
             review:
-                "JupiNext transformed our legacy system into a modern, scalable platform. Their expertise in cloud solutions and attention to detail exceeded our expectations. The team was professional and delivered on time. I highly recommend their services to anyone looking for top-notch software development.",
-            highlights: ["transformed", "expertise", "exceeded", "professional", "highly recommend"],
+                "JupiNext transformed our legacy system into a modern, scalable platform. Their expertise in cloud solutions and attention to detail exceeded our expectations.",
+            highlights: ["transformed", "expertise", "exceeded"],
             initials: "MJ",
         },
         {
@@ -26,16 +25,8 @@ export default function ReviewsClient() {
             role: "Product Manager",
             rating: 5,
             review:
-                "Working with JupiNext on our mobile app was a game-changer. They understood our vision perfectly and delivered a beautiful, intuitive app that our users love. The communication throughout the project was excellent, and they were always responsive to our feedback. Highly recommend their mobile development services!",
-            highlights: [
-                "game-changer",
-                "understood",
-                "perfectly",
-                "beautiful",
-                "excellent",
-                "responsive",
-                "Highly recommend",
-            ],
+                "Working with JupiNext on our mobile app was a game-changer. They understood our vision perfectly and delivered a beautiful, intuitive app.",
+            highlights: ["game-changer", "perfectly", "beautiful"],
             initials: "SP",
         },
         {
@@ -43,8 +34,8 @@ export default function ReviewsClient() {
             role: "Operations Director",
             rating: 4,
             review:
-                "The blockchain solution JupiNext built for our supply chain has revolutionized our operations. Their deep technical knowledge and innovative approach helped us achieve transparency we never thought possible. The implementation was smooth, and their ongoing support has been fantastic.",
-            highlights: ["revolutionized", "deep technical knowledge", "innovative", "smooth", "fantastic"],
+                "The blockchain solution JupiNext built for our supply chain has revolutionized our operations with transparency and innovation.",
+            highlights: ["revolutionized", "innovation"],
             initials: "DC",
         },
         {
@@ -52,8 +43,8 @@ export default function ReviewsClient() {
             role: "Marketing Director",
             rating: 5,
             review:
-                "JupiNext created an amazing website for our business that perfectly captures our brand identity. The design is modern and clean, and the performance is excellent. They were patient with our requests and made sure everything was exactly as we wanted. Couldn't be happier with the results!",
-            highlights: ["amazing", "perfectly", "modern", "excellent", "patient", "happier"],
+                "JupiNext created an amazing website that perfectly captures our brand identity. The design is modern and performance is excellent.",
+            highlights: ["amazing", "excellent"],
             initials: "ER",
         },
         {
@@ -61,8 +52,8 @@ export default function ReviewsClient() {
             role: "Startup Founder",
             rating: 5,
             review:
-                "As a startup, we needed a reliable partner to build our MVP quickly without compromising on quality. JupiNext delivered beyond our expectations. Their agile approach and technical expertise helped us launch on time and within budget. The team truly understood our vision and brought it to life.",
-            highlights: ["reliable", "beyond our expectations", "expertise", "on time", "within budget", "truly understood"],
+                "As a startup, we needed a reliable partner to build our MVP quickly. JupiNext delivered beyond expectations.",
+            highlights: ["reliable", "beyond expectations"],
             initials: "JW",
         },
         {
@@ -70,8 +61,8 @@ export default function ReviewsClient() {
             role: "Head of Engineering",
             rating: 5,
             review:
-                "The DevOps and cloud infrastructure setup that JupiNext implemented for us has been rock solid. Our deployment times have improved significantly, and system reliability has never been better. Their team's knowledge of modern cloud technologies is impressive, and they provided excellent training to our internal team.",
-            highlights: ["rock solid", "improved significantly", "never been better", "impressive", "excellent training"],
+                "The DevOps and cloud infrastructure setup implemented by JupiNext has been rock solid and extremely reliable.",
+            highlights: ["rock solid", "reliable"],
             initials: "LA",
         },
     ]
@@ -84,141 +75,150 @@ export default function ReviewsClient() {
     }
 
     const highlightText = (text, highlights) => {
-        if (!highlights || highlights.length === 0) return text
-
-        let highlightedText = text
-        highlights.forEach((phrase) => {
-            const regex = new RegExp(`(${phrase})`, "gi")
-            highlightedText = highlightedText.replace(
-                regex,
-                `<span class="text-primary font-semibold">$1</span>`,
+        let highlighted = text
+        highlights.forEach((h) => {
+            highlighted = highlighted.replace(
+                new RegExp(`(${h})`, "gi"),
+                `<span class="text-primary font-semibold">$1</span>`
             )
         })
-
-        return <span dangerouslySetInnerHTML={{ __html: highlightedText }} />
+        return <span dangerouslySetInnerHTML={{ __html: highlighted }} />
     }
+
+    // ---------- STATS ----------
+    const totalReviews = reviews.length
+    const avgRating =
+        reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews
+    const fiveStar = reviews.filter((r) => r.rating === 5).length
+    const satisfaction = Math.round((fiveStar / totalReviews) * 100)
 
     return (
         <div className="min-h-screen">
-
             <Header />
 
-            {/* Hero Section */}
-            <section className="relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background px-6 py-24 lg:px-8">
+            {/* Hero */}
+            <section className="relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background px-6 py-24">
                 <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl mb-6">
-                        <span className="text-primary">Client</span> <span className="text-secondary">Reviews</span>
+                    <h1 className="text-5xl font-bold mb-6">
+                        <span className="text-primary">Client</span>{" "}
+                        <span className="text-secondary">Reviews</span>
                     </h1>
-                    <p className="mt-6 text-pretty text-lg leading-8 text-muted-foreground">
-                        Hear what our clients have to say about working with JupiNext. Real feedback from real projects.
+                    <p className="text-lg text-muted-foreground">
+                        Real feedback from real people who trusted JupiNext
                     </p>
                 </div>
             </section>
 
-            {/* Reviews Grid */}
-            <section className="px-6 py-12 lg:px-8">
-                <div className="mx-auto max-w-7xl">
-                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {reviews.map((review, index) => (
+            {/* Reviews */}
+            <section className="px-6 py-16 bg-muted/10">
+                <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {reviews.map((review, index) => (
+                        <div
+                            key={index}
+                            className="relative h-[360px] perspective-1000 cursor-pointer"
+                            onClick={() => toggleFlip(index)}
+                        >
                             <div
-                                key={index}
-                                className="relative h-[350px] cursor-pointer perspective-1000 group"
-                                onClick={() => toggleFlip(index)}
+                                className={`relative h-full w-full preserve-3d transition-transform duration-700 ${flippedCards[index] ? "rotate-y-180" : ""
+                                    }`}
                             >
-                                {/* ROTATING WRAPPER */}
-                                <div
-                                    className={`relative h-full w-full preserve-3d transition-transform duration-700 ${flippedCards[index] ? "rotate-y-180" : ""
-                                        }`}
-                                >
-                                    {/* FRONT */}
-                                    <div className="absolute inset-0 backface-hidden">
-                                        <div className="h-full w-full p-[1px] rounded-2xl bg-gradient-to-br from-primary/50 via-transparent to-secondary/50 shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
-                                            <div className="h-full w-full rounded-2xl bg-card/80 backdrop-blur-md p-8 flex flex-col items-center justify-center relative overflow-hidden">
-                                                {/* Decorative Background Elements */}
-                                                <div className="absolute top-0 right-0 p-6 opacity-5">
-                                                    <Quote size={120} className="text-primary" />
+                                {/* FRONT */}
+                                <div className="absolute inset-0 backface-hidden">
+                                    <div className="group relative h-full rounded-2xl border border-border/50 bg-card/70 backdrop-blur-xl p-8 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                                        <div
+                                            className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                            style={{
+                                                background:
+                                                    "radial-gradient(circle at top, #E6FFFA 0%, transparent 60%)",
+                                            }}
+                                        />
+
+                                        <Quote className="absolute top-6 right-6 text-primary/10" size={80} />
+
+                                        <div className="relative z-10 text-center">
+                                            {/* ✅ FIXED INITIALS (OPTICAL CENTER) */}
+                                            <div className="w-16 h-16 rounded-full bg-accent/10 mb-6 ml-8 grid place-items-center">
+                                                <span className="font-mono text-[20px] font-bold leading-none text-accent">
+                                                    {review.initials}
+                                                </span>
+                                            </div>
+
+                                            <h3 className="text-xl font-bold text-primary">
+                                                {review.name}
+                                            </h3>
+                                            <p className="text-xs mt-1 uppercase text-secondary mb-4">
+                                                {review.role}
+                                            </p>
+
+                                            <div className="flex justify-center gap-1 mb-4">
+                                                {[...Array(review.rating)].map((_, i) => (
+                                                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                                                ))}
+                                            </div>
+
+                                            <div className="mt-4 inline-flex items-center gap-2 text-xs font-medium text-accent/80 group-hover:text-accent transition">
+                                                <span>Read full review</span>
+                                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* BACK */}
+                                <div className="absolute inset-0 backface-hidden rotate-y-180">
+                                    <div className="group relative h-full rounded-2xl border border-border/50 bg-card/90 backdrop-blur-xl p-8 flex flex-col justify-between shadow-inner transition-all duration-300 hover:shadow-lg">
+                                        <div
+                                            className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                            style={{
+                                                background:
+                                                    "radial-gradient(circle at top, #FFF1F2 0%, transparent 60%)",
+                                            }}
+                                        />
+
+                                        <div className="relative z-10 overflow-y-auto">
+                                            <div className="flex gap-1 mb-4">
+                                                {[...Array(review.rating)].map((_, i) => (
+                                                    <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
+                                                ))}
+                                            </div>
+
+                                            <p className="text-sm leading-relaxed text-muted-foreground pl-4 border-l-2 border-secondary/30">
+                                                {highlightText(review.review, review.highlights)}
+                                            </p>
+                                        </div>
+
+                                        <div className="relative z-10 mt-4 pt-4 border-t border-border/50 flex items-center gap-3">
+                                            {/* ✅ FIXED INITIALS (SMALL) */}
+                                            <div className="h-8 w-8 rounded-full bg-accent/10 grid place-items-center">
+                                                <span className="font-mono text-[11px] font-bold leading-none text-accent">
+                                                    {review.initials}
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <div className="text-sm font-semibold text-primary">
+                                                    {review.name}
                                                 </div>
-
-                                                <div className="relative z-10 flex flex-col items-center">
-                                                    <div className="w-16 h-16 rounded-full bg-secondary p-0.5 mb-6">
-                                                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-xl font-bold">
-                                                            <span className="text-secondary">
-                                                                {review.initials}
-                                                            </span>
-                                                        </div>
-                                                    </div>
-
-                                                    <h3 className="text-2xl font-bold text-center mb-1 text-primary">{review.name}</h3>
-                                                    <p className="text-sm text-secondary font-medium tracking-wide uppercase mb-4">{review.role}</p>
-
-                                                    <div className="flex gap-1 mb-8">
-                                                        {[...Array(review.rating)].map((_, i) => (
-                                                            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                                                        ))}
-                                                    </div>
-
-                                                    <p className="text-xs text-muted-foreground flex items-center gap-2 animate-pulse">
-                                                        Tap to read review
-                                                    </p>
+                                                <div className="text-xs text-secondary">
+                                                    {review.role}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* BACK */}
-                                    <div className="absolute inset-0 backface-hidden rotate-y-180">
-                                        <div className="h-full w-full p-[1px] rounded-2xl bg-gradient-to-bl from-secondary/50 via-transparent to-primary/50 shadow-lg">
-                                            <div className="h-full w-full rounded-2xl bg-card/90 backdrop-blur-md p-6 sm:p-8 flex flex-col justify-between">
-                                                {/* Review Content */}
-                                                <div className="flex-1 overflow-y-auto custom-scrollbar">
-                                                    <div className="flex gap-1 mb-4">
-                                                        {[...Array(review.rating)].map((_, i) => (
-                                                            <Star
-                                                                key={i}
-                                                                className="h-5 w-5 fill-secondary text-secondary"
-                                                            />
-                                                        ))}
-                                                    </div>
-
-                                                    <div className="relative">
-                                                        <Quote className="absolute -top-2 -left-2 h-6 w-6 text-primary/20 transform -scale-x-100" />
-                                                        <p className="text-sm leading-relaxed text-muted-foreground pl-4 border-l-2 border-primary/20">
-                                                            {highlightText(review.review, review.highlights)}
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                {/* Footer */}
-                                                <div className="mt-6 flex items-center gap-3 border-t border-border/50 pt-4">
-                                                    <div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center">
-                                                        <span className="text-xs font-bold text-secondary">{review.initials}</span>
-                                                    </div>
-                                                    <div className="min-w-0">
-                                                        <div className="text-sm font-semibold truncate text-primary">{review.name}</div>
-                                                        <div className="text-xs text-secondary truncate">{review.role}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
-
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </section>
 
-            {/* Stats Section */}
-            <section className="relative overflow-hidden px-6 py-24 lg:px-8">
-                {/* Background decoration */}
+            {/* Stats */}
+            <section className="relative overflow-hidden px-6 py-24">
                 <div className="absolute inset-0 bg-muted/20 -z-10" />
                 <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-                <div className="relative mx-auto max-w-7xl">
+                <div className="mx-auto max-w-7xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
+                        <h2 className="text-3xl font-bold sm:text-4xl">
                             Trusted <span className="text-primary">by Clients</span>{" "}
                             <span className="text-secondary">Worldwide</span>
                         </h2>
@@ -227,86 +227,40 @@ export default function ReviewsClient() {
                         </p>
                     </div>
 
-                    {/* UPDATED GRID */}
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {/* Card 1 */}
-                        {(() => {
-                            const { count, ref } = useCounter(95)
+                        {[
+                            { label: "Client Satisfaction Rate", value: satisfaction, suffix: "%" },
+                            { label: "Total Reviews", value: totalReviews, suffix: "+" },
+                            {
+                                label: "Average Rating",
+                                value: Math.round(avgRating * 10),
+                                render: (v) => `${(v / 10).toFixed(1)}/5`,
+                            },
+                            { label: "5-Star Reviews", value: fiveStar, suffix: "+" },
+                        ].map((item, i) => {
+                            const { count, ref } = useCounter(item.value)
                             return (
-                                <div className="p-[1px] rounded-2xl bg-gradient-to-br from-primary/30 to-transparent hover:from-primary/50 transition-colors duration-500">
+                                <div key={i} className="p-[1px] rounded-2xl bg-gradient-to-br from-primary/30 to-transparent">
                                     <Card
                                         ref={ref}
-                                        className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
+                                        className="rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
                                     >
-                                        <div className="text-4xl font-bold text-foreground mb-2">{count}%</div>
-                                        <div className="text-sm font-medium text-muted-foreground">
-                                            Client Satisfaction Rate
+                                        <div className="text-4xl font-bold mb-2">
+                                            {item.render
+                                                ? item.render(count)
+                                                : `${count}${item.suffix ?? ""}`}
+                                        </div>
+                                        <div className="text-sm text-muted-foreground">
+                                            {item.label}
                                         </div>
                                     </Card>
                                 </div>
                             )
-                        })()}
-
-                        {/* Card 2 */}
-                        {(() => {
-                            const { count, ref } = useCounter(150)
-                            return (
-                                <div className="p-[1px] rounded-2xl bg-gradient-to-br from-secondary/30 to-transparent hover:from-secondary/50 transition-colors duration-500">
-                                    <Card
-                                        ref={ref}
-                                        className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
-                                    >
-                                        <div className="text-4xl font-bold text-foreground mb-2">{count}+</div>
-                                        <div className="text-sm font-medium text-muted-foreground">
-                                            Successful Projects
-                                        </div>
-                                    </Card>
-                                </div>
-                            )
-                        })()}
-
-                        {/* Card 3 */}
-                        {(() => {
-                            const { count, ref } = useCounter(49)
-                            return (
-                                <div className="p-[1px] rounded-2xl bg-gradient-to-br from-primary/30 to-transparent hover:from-primary/50 transition-colors duration-500">
-                                    <Card
-                                        ref={ref}
-                                        className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
-                                    >
-                                        <div className="text-4xl font-bold text-foreground mb-2">
-                                            {(count / 10).toFixed(1)}/5
-                                        </div>
-                                        <div className="text-sm font-medium text-muted-foreground">
-                                            Average Rating
-                                        </div>
-                                    </Card>
-                                </div>
-                            )
-                        })()}
-
-                        {/* Card 4 */}
-                        {(() => {
-                            const { count, ref } = useCounter(12135)
-                            return (
-                                <div className="p-[1px] rounded-2xl bg-gradient-to-br from-secondary/30 to-transparent hover:from-secondary/50 transition-colors duration-500">
-                                    <Card
-                                        ref={ref}
-                                        className="h-full rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
-                                    >
-                                        <div className="text-4xl font-bold text-foreground mb-2">
-                                            {count.toLocaleString()}+
-                                        </div>
-                                        <div className="text-sm font-medium text-muted-foreground">
-                                            Lines of Code Written
-                                        </div>
-                                    </Card>
-                                </div>
-                            )
-                        })()}
+                        })}
                     </div>
                 </div>
             </section>
+
             <Footer />
         </div>
     )
