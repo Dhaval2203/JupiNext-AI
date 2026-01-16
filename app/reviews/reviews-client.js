@@ -90,7 +90,7 @@ export default function ReviewsClient() {
     const avgRating =
         reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews
     const fiveStar = reviews.filter((r) => r.rating === 5).length
-    const satisfaction = Math.round((fiveStar / totalReviews) * 100)
+    const satisfaction = 95
 
     return (
         <div className="min-h-screen">
@@ -133,7 +133,7 @@ export default function ReviewsClient() {
                                             }}
                                         />
 
-                                        <Quote className="absolute top-6 right-6 text-primary/10" size={80} />
+                                        <Quote className="absolute top-6 right-6 text-accent/30" size={80} />
 
                                         <div className="relative z-10 text-center">
                                             {/* ✅ FIXED INITIALS (OPTICAL CENTER) */}
@@ -143,18 +143,18 @@ export default function ReviewsClient() {
                                                 </span>
                                             </div>
 
+                                            <div className="flex justify-center gap-1 mb-4">
+                                                {[...Array(review.rating)].map((_, i) => (
+                                                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                                                ))}
+                                            </div>
+
                                             <h3 className="text-xl font-bold text-primary">
                                                 {review.name}
                                             </h3>
                                             <p className="text-xs mt-1 uppercase text-secondary mb-4">
                                                 {review.role}
                                             </p>
-
-                                            <div className="flex justify-center gap-1 mb-4">
-                                                {[...Array(review.rating)].map((_, i) => (
-                                                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                                                ))}
-                                            </div>
 
                                             <div className="mt-4 inline-flex items-center gap-2 text-xs font-medium text-accent/80 group-hover:text-accent transition">
                                                 <span>Read full review</span>
@@ -229,14 +229,14 @@ export default function ReviewsClient() {
 
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                         {[
-                            { label: "Client Satisfaction Rate", value: satisfaction, suffix: "%" },
-                            { label: "Total Reviews", value: totalReviews, suffix: "+" },
+                            { label: "Client Satisfaction Rate", value: 95, suffix: "%" },
+                            { label: "Successful Projects", value: 150, suffix: "+" },
                             {
                                 label: "Average Rating",
-                                value: Math.round(avgRating * 10),
+                                value: 49,
                                 render: (v) => `${(v / 10).toFixed(1)}/5`,
                             },
-                            { label: "5-Star Reviews", value: fiveStar, suffix: "+" },
+                            { label: "Lines of Code Written", value: 12135, suffix: "+" },
                         ].map((item, i) => {
                             const { count, ref } = useCounter(item.value)
                             return (
@@ -245,12 +245,12 @@ export default function ReviewsClient() {
                                         ref={ref}
                                         className="rounded-2xl border-none bg-card/50 p-8 text-center backdrop-blur-sm"
                                     >
-                                        <div className="text-4xl font-bold mb-2">
+                                        <div className="text-4xl font-bold mb-2 text-accent">
                                             {item.render
                                                 ? item.render(count)
-                                                : `${count}${item.suffix ?? ""}`}
+                                                : `${count.toLocaleString()}${item.suffix ?? ""}`}
                                         </div>
-                                        <div className="text-sm text-muted-foreground">
+                                        <div className="text-lg text-primary font-bold">
                                             {item.label}
                                         </div>
                                     </Card>
