@@ -123,24 +123,24 @@ export default function ContactClient() {
                                     </div>
                                 </Card>
 
-                                {/* <Card className="rounded-xl border border-border bg-card p-6">
-									<div className="flex items-start gap-4">
-										<div className="rounded-lg bg-secondary/10 p-3">
-											<Phone className="h-6 w-6 text-secondary" />
-										</div>
-										<div>
-											<h3 className="font-semibold text-foreground text-secondary">
-												Phone
-											</h3>
-											<a
-												href="tel:+1234567890"
-												className="mt-1 text-sm text-muted-foreground hover:text-secondary"
-											>
-												+91 98765 43210
-											</a>
-										</div>
-									</div>
-								</Card> */}
+                                <Card className="rounded-xl border border-border bg-card p-6">
+                                    <div className="flex items-start gap-4">
+                                        <div className="rounded-lg bg-secondary/10 p-3">
+                                            <Phone className="h-6 w-6 text-secondary" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-semibold text-foreground text-secondary">
+                                                Phone
+                                            </h3>
+                                            <a
+                                                href="tel:+1234567890"
+                                                className="mt-1 text-sm text-muted-foreground hover:text-secondary"
+                                            >
+                                                +91 70698 54775
+                                            </a>
+                                        </div>
+                                    </div>
+                                </Card>
 
                                 <Card className="rounded-xl border border-border bg-card p-6">
                                     <div className="flex items-start gap-4">
